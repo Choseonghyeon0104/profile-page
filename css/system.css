@@ -1,0 +1,50 @@
+:root{
+    /* 화면에 따른 수치 */
+    --basic-font-pc:20px;
+    --basic-font-tab:18px;
+    --basic-font-mobile:14px;
+    
+    /* 글씨 크기 */
+    --fs-h1:1.6rem;
+    --fs-h2:1.4rem;
+    --fs-h3:1.2rem;
+    --fs-h4:1.125rem;
+    --fs-bd1:1rem;
+    --fs-bd2:0.875rem;
+    --fs-det:0.765rem;
+    
+    /* 글씨 굵기 */
+    --fw-reg:400;
+    --fw-med:500;
+    --fw-bold:700;
+
+    /* 색상 */
+    /* main->700 */
+    --pm-color-0:#FFFFFF;
+    --pm-color-1:#FEEEE3;
+    --pm-color-2:#FCDCC6;
+    --pm-color-3:#F9CBAB;
+    --pm-color-4:#F5BB91;
+    --pm-color-5:#F1AC7B;
+    --pm-color-6:#EB9E68;
+    --pm-color-7:#E49257;
+    --pm-color-8:#DB8649;
+    --pm-color-9:#D07B3E;
+    --pm-color-10:#C47034;
+    --pm-color-11:#B6652C;
+    --pm-color-12:#A75B25;
+    --pm-color-13:#97511F;
+    --pm-color-14:#87481B;
+    --point-color:#6B8E23;
+
+    /* 여백 */
+    --space-2x-small:0.15rem;
+    --space-x-small:0.25rem;
+    --space-small:0.5rem;
+    --space-normal:1rem;
+    --space-large:2rem;
+    --space-x-large:3rem;
+    --space-2x-large:4rem;
+    --space-3x-large:6rem;
+
+}
