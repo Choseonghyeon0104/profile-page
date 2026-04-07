@@ -60,3 +60,7 @@
     font-weight: 900;
     font-display: swap;
 }
+.noto-serif-kr{
+  font-family: "Noto Serif KR", serif;
+  font-weight: 700;
+}
