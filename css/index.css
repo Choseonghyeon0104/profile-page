@@ -108,11 +108,11 @@ body{
 .intro-info dt{
     font-weight: var(--fw-bold);
 }
-.intro-info{
+.intro-info {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 2fr 4fr;
     margin-top: var(--space-x-large);
-    gap: 1rem 10rem ;
+    gap: 1rem;
 }
 .hero-txt > div, .hero-txt-smart div {
     transition: filter 0.1s ease-out, opacity 0.1s ease-out, transform 0.1s ease-out;
