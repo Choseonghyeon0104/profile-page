@@ -16,6 +16,7 @@ body{
     top: 0;
     z-index: -1;
 }
+
 #vanta-canvas canvas{
     width:100%;
     height:100%;
@@ -158,7 +159,7 @@ body{
     border-radius: 1rem;
 }
 .about-wrapper h1{
-    color: #0C195C;
+    color: #2A399C;
     font-size: 6rem;
     text-align: center;
 }
@@ -236,7 +237,7 @@ body{
     transition: all 0.5s ease 0s;
 }
 .skill-grid li:hover{
-    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.3);
     transform: translateY(-0.4rem);
 }
 .skill-grid li h4{
@@ -246,6 +247,139 @@ body{
 }
 .skill-grid li h4+p{
     line-height: 1.4;
+}
+
+/* 팝업 */
+/* 1. 전체 컨테이너: 줄 바꿈 허용 및 중앙 정렬 */
+.cloud-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 30px;        /* 상하 40px, 좌우 30px로 널찍한 간격 */
+    max-width: 1400px;     /* 5개가 들어가는 중간 줄을 위해 너비 충분히 확보 */
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* 2. 팝업 아이템 기본 스타일 */
+.popup-item {
+    border-radius: 35px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    flex-shrink: 0;
+    transition: transform 0.4s ease-out, box-shadow 0.3s ease;
+}
+
+/* 3. [핵심] 4-5-4 구조 강제 고정 (너비 조절) */
+
+/* 첫 번째 줄 (1~4번) & 세 번째 줄 (10~13번): 4개 배치 */
+.popup-item:nth-child(-n+4),
+.popup-item:nth-child(n+10) {
+    width: calc(24% - 30px); /* 약 4분의 1 크기 */
+}
+
+/* 두 번째 줄 (5~9번): 5개 배치 */
+.popup-item:nth-child(n+5):nth-child(-n+9) {
+    width: calc(19% - 30px); /* 약 5분의 1 크기 */
+}
+
+/* 4. [정돈된 마구잡이] 위아래 미세한 높낮이 변화 */
+.popup-item:nth-child(odd) { transform: translateY(10px); }   /* 홀수: 살짝 아래 */
+.popup-item:nth-child(even) { transform: translateY(-10px); } /* 짝수: 살짝 위 */
+.popup-item:nth-child(3n) { transform: translateY(15px); }    /* 일부는 더 아래로 */
+
+/* 5. 마우스 올렸을 때 효과 */
+.popup-item:hover {
+    transform: scale(1.08) translateY(0) !important;
+    z-index: 100;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* 이미지 및 오버레이 (기존 스타일 동일) */
+.popup-item img { width: 100%; display: block; height: auto; object-fit: cover; }
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(107, 148, 217, 0.85);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s ease;
+}
+.popup-item:hover .overlay { opacity: 1; }
+.text { color: #fff; text-align: center; padding: 15px; }
+
+/* 6. 모달 전체 배경 (평소에는 숨김) */
+.modal-overlay {
+    display: none;        /* [중요] 평소엔 안 보이게 설정 */
+    position: fixed;      /* 화면에 고정 */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* 배경을 어둡게 */
+    backdrop-filter: blur(8px);    /* 뒷배경 구름을 흐릿하게 */
+    z-index: 2000;        /* 팝업들보다 위에 뜨게 함 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 7. 모달 흰색 상자 */
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 40px;
+    display: flex;         /* 이미지와 텍스트 가로 배치 */
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.3s ease; /* 나타날 때 부드럽게 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 8. 모달 내부 레이아웃 */
+.modal-body { display: flex; width: 100%; }
+
+#modalImg { width: 50%; object-fit: cover; max-height: 80vh; }
+
+.modal-text {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 9. 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #333;
+}
+/* 10. 호버 시 텍스트 제어 (추가 부분) */
+
+/* 메인 화면 호버 시 설명글(<p>)은 강제로 숨김 */
+.popup-item .overlay .text p {
+    display: none !important;
+}
+
+/* 제목(<h3>) 아래에 '자세히 보기' 문구 생성 */
+.popup-item .overlay .text h3::after {
+    content: "자세히 보기 →"; /* 원하는 문구로 수정 가능 */
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;             /* 평소엔 투명 */
+    transition: opacity 0.3s ease;
+}
+
+/* 마우스를 올렸을 때만 문구가 나타나게 함 */
+.popup-item:hover .overlay .text h3::after {
+    opacity: 1;
 }
 
 @media(max-width: 1440px){

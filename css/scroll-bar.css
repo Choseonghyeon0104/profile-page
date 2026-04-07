@@ -1,0 +1,31 @@
+/* 1. 스크롤바 전체 너비 */
+::-webkit-scrollbar {
+    width: 14px; /* 조금 더 넓게 잡아 클릭하기 편하게 함 */
+}
+
+/* 2. 스크롤바 배경 (트랙) - 조금 더 깊이감 있는 하늘색 */
+::-webkit-scrollbar-track {
+    background: rgba(90, 130, 200, 0.15); /* 농도를 0.15로 높여 영역 구분 확실히 */
+    border-radius: 10px;
+}
+
+/* 3. 스크롤바 막대 (핸들) - 진하고 선명한 스카이 블루 */
+::-webkit-scrollbar-thumb {
+    /* 기존 0.4에서 0.8로 농도를 대폭 올려 진하게 변경 */
+    background: rgba(70, 130, 230, 0.8); 
+    border-radius: 10px;
+    /* 막대 테두리에 투명 여백을 주어 세련된 느낌 유지 */
+    border: 3px solid rgba(255, 255, 255, 0); 
+    background-clip: padding-box;
+}
+
+/* 4. 마우스 올렸을 때 (Hover) - 가장 진한 포인트 컬러 */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(40, 90, 200, 1.0); /* 완전히 진한 파란색 */
+}
+
+/* 파이어폭스 대응 */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: rgba(70, 130, 230, 0.8) rgba(90, 130, 200, 0.15);
+}

@@ -18,9 +18,9 @@
 }
 /* 기본 상태: 아래로 40px 내려가 있고 투명함 */
 .btt {
-    transform: translateY(40px);
+    transform: translateY(80px);
     opacity: 0;
-    transition: all 1s ease 0s;
+    transition: all 2s ease 0s;
 }
 
 /* 활성화 상태: 제자리(0)로 올라오면서 선명해짐 */
