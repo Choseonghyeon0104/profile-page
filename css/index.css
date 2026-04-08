@@ -147,7 +147,7 @@ body{
     /* margin-top: -100vh; */
     z-index: 3;
     padding-top: var(--space-3x-large);
-    padding-bottom: 100px;
+    padding-bottom:8rem;
 }
 .about-grid {
     display: grid;
@@ -249,138 +249,301 @@ body{
     line-height: 1.4;
 }
 
-/* 팝업 */
-/* 1. 전체 컨테이너: 줄 바꿈 허용 및 중앙 정렬 */
-.cloud-container {
+.mo-cloud-section { display: none !important; }
+.pc-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px 30px;        /* 상하 40px, 좌우 30px로 널찍한 간격 */
-    max-width: 1400px;     /* 5개가 들어가는 중간 줄을 위해 너비 충분히 확보 */
-    margin: 60px auto;
-    padding: 20px;
+    max-width: 1600px;
+    margin: 100px auto;
+    gap: 60px 35px;
+}
+.pc-container .popup-item { position: relative; background: #fff; border-radius: 40px; overflow: hidden; cursor: pointer; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s ease-out; }
+
+/* 4-5-4 배치 너비 */
+.pc-container .popup-item:nth-child(-n+4), .pc-container .popup-item:nth-child(n+10) { width: calc(25% - 30px); }
+.pc-container .popup-item:nth-child(n+5):nth-child(-n+9) { width: calc(20% - 30px); }
+
+/* 높낮이 */
+.pc-container .popup-item:nth-child(odd) { transform: translateY(25px); }
+.pc-container .popup-item:nth-child(even) { transform: translateY(-25px); }
+.pc-container .popup-item:nth-child(3n) { transform: translateY(40px); }
+
+.pc-container .popup-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 호버 오버레이 */
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+.pc-container .popup-item:hover .overlay { opacity: 1; }
+
+.text { color: #fff; text-align: center; padding: 20px; }
+.text h3 {
+    margin: 0 0 30px;
+    font-size: 1.1rem;
+}
+.view-more {
+    display: inline-block;
+    padding: 5px 22px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+.view-more:hover { background: #fff; color: #000; }
+.pc-container .hidden-desc { display: none; }
+
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; }
+
+/* [수정] PC 모달 크기 축소 (꽉 차지 않게) */
+.modal-content { 
+    background: #fff; 
+    width: 65%;          /* 기존보다 줄임 */
+    max-width: 850px;    /* 최대 너비 제한 */
+    border-radius: 2rem; 
+    display: flex; 
+    overflow: hidden; 
+    position: relative; 
+    max-height: 85vh;    /* 화면 높이 85% 제한 */
 }
 
-/* 2. 팝업 아이템 기본 스타일 */
-.popup-item {
-    border-radius: 35px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #fff;
-    flex-shrink: 0;
-    transition: transform 0.4s ease-out, box-shadow 0.3s ease;
-}
-
-/* 3. [핵심] 4-5-4 구조 강제 고정 (너비 조절) */
-
-/* 첫 번째 줄 (1~4번) & 세 번째 줄 (10~13번): 4개 배치 */
-.popup-item:nth-child(-n+4),
-.popup-item:nth-child(n+10) {
-    width: calc(24% - 30px); /* 약 4분의 1 크기 */
-}
-
-/* 두 번째 줄 (5~9번): 5개 배치 */
-.popup-item:nth-child(n+5):nth-child(-n+9) {
-    width: calc(19% - 30px); /* 약 5분의 1 크기 */
-}
-
-/* 4. [정돈된 마구잡이] 위아래 미세한 높낮이 변화 */
-.popup-item:nth-child(odd) { transform: translateY(10px); }   /* 홀수: 살짝 아래 */
-.popup-item:nth-child(even) { transform: translateY(-10px); } /* 짝수: 살짝 위 */
-.popup-item:nth-child(3n) { transform: translateY(15px); }    /* 일부는 더 아래로 */
-
-/* 5. 마우스 올렸을 때 효과 */
-.popup-item:hover {
-    transform: scale(1.08) translateY(0) !important;
-    z-index: 100;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-}
-
-/* 이미지 및 오버레이 (기존 스타일 동일) */
-.popup-item img { width: 100%; display: block; height: auto; object-fit: cover; }
-.overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(107, 148, 217, 0.85);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.3s ease;
-}
-.popup-item:hover .overlay { opacity: 1; }
-.text { color: #fff; text-align: center; padding: 15px; }
-
-/* 6. 모달 전체 배경 (평소에는 숨김) */
-.modal-overlay {
-    display: none;        /* [중요] 평소엔 안 보이게 설정 */
-    position: fixed;      /* 화면에 고정 */
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* 배경을 어둡게 */
-    backdrop-filter: blur(8px);    /* 뒷배경 구름을 흐릿하게 */
-    z-index: 2000;        /* 팝업들보다 위에 뜨게 함 */
-    justify-content: center;
-    align-items: center;
-}
-
-/* 7. 모달 흰색 상자 */
-.modal-content {
-    background: #fff;
-    width: 90%;
-    max-width: 900px;
-    border-radius: 40px;
-    display: flex;         /* 이미지와 텍스트 가로 배치 */
-    overflow: hidden;
-    position: relative;
-    animation: fadeIn 0.3s ease; /* 나타날 때 부드럽게 */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* 8. 모달 내부 레이아웃 */
 .modal-body { display: flex; width: 100%; }
 
-#modalImg { width: 50%; object-fit: cover; max-height: 80vh; }
+/* PC 이미지/텍스트 좌우 정렬 유지 */
+.modal-img-wrap { width: 50%; height: auto; display: flex; align-items: center; justify-content: center; background: #f5f5f5; }
+#modalImg { width: 100%; height: 100%; object-fit: cover; } /* PC는 꽉 차게 */
 
-.modal-text {
-    width: 50%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.modal-text { width: 50%; padding: 40px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; }
+#modalTitle {
+    font-size: 1.4rem;
+    color: #2A399C;
+    margin: 0 0 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+#modalDesc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #444;
+    margin: 0;
+    word-break: keep-all;
+}
+.close-btn { position: absolute; top: 20px; right: 25px; font-size: 35px; cursor: pointer; z-index: 10; color: #000; }
+
+.text-oval-bg {
+    position: relative; /* 배경 원의 기준점이 됩니다 */
+    display: inline-block; /* 텍스트 너비만큼만 영역을 잡습니다 */
+    z-index: 1; /* 텍스트가 배경보다 위에 오도록 합니다 */
+    padding: 0 10px; /* 원이 텍스트보다 살짝 여유 있게 너비를 잡도록 조절 */
 }
 
-/* 9. 닫기 버튼 */
-.close-btn {
+.text-oval-bg::before {
+    content: '';
     position: absolute;
-    top: 20px; right: 30px;
-    font-size: 40px;
-    cursor: pointer;
-    color: #333;
+    top: 50%; /* 세로 중앙 */
+    left: 50%; /* 가로 중앙 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    
+    /* 원의 크기 설정: 텍스트 너비의 110%, 높이는 적절하게 */
+    width: 110%; 
+    height: 50%; 
+    
+    /* 타원형 만들기 */
+    background-color: rgba(133, 163, 238, 0.6); /* 이미지와 유사한 연한 파랑색 */
+    border-radius: 50%; /* 원형/타원형을 만드는 핵심 속성 */
+    
+    z-index: -1; /* 텍스트 뒤로 보냅니다 */
+    filter: blur(3px); /* 테두리를 부드럽게 뭉개는 효과 (이미지 느낌 재현) */
 }
-/* 10. 호버 시 텍스트 제어 (추가 부분) */
+.center-container {
+    display: flex;             /* 정렬을 위한 플렉스 박스 활성화 */
+    justify-content: center;    /* 가로 중앙 정렬 */
+    align-items: center;        /* 세로 중앙 정렬 */
+    margin-bottom: 3rem;
+}
+.center-container+p{
+    text-align: center;
+}
 
-/* 메인 화면 호버 시 설명글(<p>)은 강제로 숨김 */
-.popup-item .overlay .text p {
-    display: none !important;
+.design-wrapper{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+.design-wrapper .common-frame h1{
+    font-size: 5rem;
+    text-align: center;
+    color: #2A399C;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+}
+.design-wrapper .common-frame h1+p{
+    text-align: center;
+    margin-bottom: 6rem;
+}
+.design-wrapper .common-frame h4.text-oval-bg{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 6rem;
 }
 
-/* 제목(<h3>) 아래에 '자세히 보기' 문구 생성 */
-.popup-item .overlay .text h3::after {
-    content: "자세히 보기 →"; /* 원하는 문구로 수정 가능 */
-    display: block;
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.9);
-    opacity: 0;             /* 평소엔 투명 */
-    transition: opacity 0.3s ease;
+
+
+/* 포스터 */
+/* 1. 전체 레이아웃 및 컨테이너 */
+#section-poster {
+    width: 100%;
+    padding: 4vw 0; /* 화면 높이에 비례한 여백 */
+    overflow: hidden; 
 }
 
-/* 마우스를 올렸을 때만 문구가 나타나게 함 */
-.popup-item:hover .overlay .text h3::after {
-    opacity: 1;
+.poster-swiper-container {
+    width: 100%;
+    max-width: 1400px; /* 조금 더 넓게 확보 */
+    margin: 0 auto;
+    position: relative; 
 }
+
+.posterSwiper {
+    margin-top: 3rem;
+    width: 100%;
+    /* 확대 시 위아래 요소와 겹치지 않도록 유동적인 패딩 설정 */
+    padding: 5vw 0; 
+    overflow: visible !important; 
+    position: relative;
+}
+
+/* 2. 슬라이드 기본 스타일 (화면 너비에 따라 자동 축소) */
+.swiper-slide {
+    /* 화면 너비의 약 18% 정도로 설정하여 여러 장이 한눈에 보이게 합니다 */
+    width: 18vw !important; 
+    /* 너무 작아지거나 커지지 않도록 한계치 설정 */
+    min-width: 180px;
+    max-width: 280px;
+    
+    height: auto !important; 
+    aspect-ratio: 2 / 3; /* 포스터 비율 유지 */
+    
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    filter: blur(3px); 
+    opacity: 0.8;      
+    transform: scale(0.8); /* 주변은 약간 더 작게 */
+}
+
+/* 3. 가운데 활성화된 슬라이드 (강조 스타일) */
+.swiper-slide-active {
+    filter: blur(0) !important;
+    opacity: 1 !important;
+    transform: scale(1.2) !important; /* 확대 배율을 살짝 조정하여 안정감 부여 */
+    z-index: 10;
+}
+
+.poster-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1.5vw 3vw rgba(0,0,0,0.2);
+}
+
+.poster-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* 4. 화살표 버튼 커스텀 (반응형 크기) */
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: rgba(198, 212, 255, 0.7); 
+    width: 2.5vw !important; /* 버튼 크기도 화면에 비례 */
+    height: 2.5vw !important;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    z-index: 100 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+/* 화살표 아이콘은 이전의 SVG 방식 유지 */
+.swiper-button-next::after, .swiper-button-prev::after { display: none !important; }
+
+.swiper-button-next {
+    right: 2vw !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M27 22L5 44l-2.1-2.1L22.8 22 2.9 2.1 5 0l22 22z' fill='%23000000'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat; background-size: 0.8vw auto; background-position: center;
+}
+
+.swiper-button-prev {
+    left: 2vw !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M0 22L22 0l2.1 2.1L4.2 22l19.9 19.9L22 44 0 22z' fill='%23000000'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat; background-size: 0.8vw auto; background-position: center;
+}
+
+/* 5. 하단 정보 박스 디자인 (유동적 크기) */
+.poster-detail-box {
+    width: 85%;
+    max-width: 800px;
+    margin: 2vw auto;
+    padding: 2.5vw;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#poster-detail-title {
+    font-size: clamp(20px, 2vw, 26px); /* 최소 20px, 화면비례 2vw, 최대 26px */
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 1vw;
+}
+
+#poster-detail-text {
+    font-size: clamp(14px, 1.2vw, 17px);
+    color: #555;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+/* 1. 기본 버튼 트랜지션 설정 (부드러운 효과를 위해 기존 버튼 코드에 추가 권장) */
+.swiper-button-next,
+.swiper-button-prev {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 2. 버튼 전체 호버 효과 (배경 및 그림자) */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #ffffff !important; /* 배경을 더 밝고 불투명하게 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* 입체감 있는 그림자 */
+    transform: translateY(-50%) scale(1.1) !important; /* 버튼 크기 1.15배 확대 */
+}
+
+/* 3. 오른쪽 버튼 호버 시 화살표 색상 변경 (빨간색 SVG) */
+.swiper-button-next:hover {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M27 22L5 44l-2.1-2.1L22.8 22 2.9 2.1 5 0l22 22z' fill='%23ff0000'/%3E%3C/svg%3E") !important;
+}
+
+/* 4. 왼쪽 버튼 호버 시 화살표 색상 변경 (빨간색 SVG) */
+.swiper-button-prev:hover {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M0 22L22 0l2.1 2.1L4.2 22l19.9 19.9L22 44 0 22z' fill='%23ff0000'/%3E%3C/svg%3E") !important;
+}
+
+/* 5. 버튼 클릭 시 (눌리는 피드백) */
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    transform: translateY(-50%) scale(0.95) !important; /* 살짝 작아짐 */
+    background-color: #f8f8f8 !important;
+}
+
+/* 6. 화살표 비활성화 상태 (첫 번째/마지막 슬라이드일 때) */
+.swiper-button-disabled {
+    opacity: 0.2 !important;
+    cursor: auto;
+    pointer-events: none; /* 클릭 불가 */
+}
+
+
+
 
 @media(max-width: 1440px){
     .hero-txt2{
@@ -474,7 +637,51 @@ body{
         flex-direction: column;
     }
 
-   
+
+    .pc-cloud-section { display: none !important; }
+    .mo-cloud-section { display: block !important; padding: 40px 0; }
+    
+    /* 슬라이드 2.3개 노출 */
+    .swiper-slide { flex: 0 0 43% !important; width: 43% !important; padding: 0 10px; box-sizing: border-box; }
+    .mo-cloud-section .popup-item { width: 100%; aspect-ratio: 1 / 1; border-radius: 25px; overflow: hidden; transform: none !important; }
+    .mo-cloud-section .popup-item img { width: 100%; height: 100%; object-fit: cover; }
+    .mo-cloud-section .text-data { display: none; }
+    .modal-content {
+        flex-direction: column;
+        width: 40%;
+        max-height: 70vh;
+    }
+    .modal-body { flex-direction: column; }
+    
+    .modal-img-wrap { 
+        width: 100%; 
+        height: auto; 
+        aspect-ratio: 1 / 1; /* 1:1 비율 고정 */
+        background: #fff;    /* 배경 흰색 */
+    }
+    #modalImg { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: contain; /* [중요] 잘림 없이 온전히 다 보임 */
+    }
+    
+    .modal-text { width: 100%; padding: 25px; justify-content: flex-start; overflow-y: auto; }
+    #modalTitle {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    #modalDesc { font-size: 0.8rem; }
+    .close-btn { top: 1rem; right: 1rem; font-size: 30px; }
+
+    .design-wrapper .common-frame h1{
+        font-size: 4rem;
+    }
+    .design-wrapper .common-frame h4.text-oval-bg {
+        font-size: 2rem;
+    }
+    .about-wrapper {
+        padding-bottom:6rem;
+    }
 }
 @media(max-width: 768px){
     .common-frame{
@@ -519,6 +726,23 @@ body{
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+    }
+    .swiper-slide { flex: 0 0 75% !important; width: 75% !important; }
+    .modal-content {
+        width: 60%;
+    }
+    .swiper-slide {
+        width: 50vw !important; /* 모바일은 한 화면에 꽉 차게 */
+    }
+    .posterSwiper {
+        padding: 15vw 0;
+    }
+   .swiper-button-next {
+        background-size: 1.2vw auto;
+    }
+
+    .swiper-button-prev {
+        background-size: 1.2vw auto;
     }
 }
 
