@@ -22,7 +22,7 @@ function initPosterSection() {
         // 끝 지점에서 부드러운 연결을 위해 추가 복제본을 배치합니다.
         loopAdditionalSlides: 5, 
         
-        speed: isMobile ? 600 : 8000, 
+        speed: isMobile ? 600 : 5000, 
         autoplay: isMobile ? false : {
             delay: 0,
             disableOnInteraction: false,
