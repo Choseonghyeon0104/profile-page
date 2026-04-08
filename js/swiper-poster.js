@@ -1,54 +1,72 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper(".posterSwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
+let posterSwiperInstance = null;
+
+function initPosterSection() {
+    const isMobile = window.innerWidth <= 1024;
+    const posterContainer = document.querySelector(".posterSwiper");
+    
+    if (!posterContainer) return;
+
+    if (posterSwiperInstance) {
+        posterSwiperInstance.destroy(true, true);
+        posterSwiperInstance = null;
+    }
+
+    posterSwiperInstance = new Swiper(".posterSwiper", {
         slidesPerView: "auto",
-        loop: false, // 무한 루프 없음
+        spaceBetween: 30,
+        loop: true,
         
-        /* [중요] 화살표 버튼 기능 활성화 */
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
+        /* [핵심 추가] 무한 루프 끊김 현상 방지 설정 */
+        // 전체 슬라이드 개수(12개)만큼 복제본을 미리 만들어 빈 공간이 생기지 않게 합니다.
+        loopedSlides: 12, 
+        // 끝 지점에서 부드러운 연결을 위해 추가 복제본을 배치합니다.
+        loopAdditionalSlides: 5, 
         
-        speed: 600,
-        coverflowEffect: {
-            rotate: 40,
-            stretch: -20,
-            depth: 300,
-            modifier: 1,
-            slideShadows: false,
+        speed: isMobile ? 600 : 8000, 
+        autoplay: isMobile ? false : {
+            delay: 0,
+            disableOnInteraction: false,
         },
-        /* [이 부분을 추가하세요] */
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+        freeMode: isMobile ? false : {
+            enabled: true,
+            sticky: false,
+            momentum: false,
         },
+        grabCursor: true,
+        touchEventsTarget: 'container',
         
         on: {
-            init: function () {
-                updatePosterDetail(this);
+            init: function() {
+                // 초기화 및 복제된 슬라이드 포함하여 지그재그 클래스 부여
+                this.slides.forEach((slide, index) => {
+                    slide.classList.remove('up-slide', 'down-slide');
+                    if (index % 2 === 0) {
+                        slide.classList.add('up-slide');
+                    } else {
+                        slide.classList.add('down-slide');
+                    }
+                });
             },
-            slideChange: function () {
-                updatePosterDetail(this);
+            touchEnd: function() {
+                if (!isMobile) {
+                    const self = this;
+                    setTimeout(() => {
+                        if(self.autoplay) self.autoplay.start();
+                    }, 100);
+                }
             }
         }
     });
+}
 
-    function updatePosterDetail(swiperInstance) {
-        const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-        if (!activeSlide) return;
-
-        const title = activeSlide.getAttribute('data-title');
-        const desc = activeSlide.getAttribute('data-desc');
-
-        const titleTarget = document.getElementById('poster-detail-title');
-        const textTarget = document.getElementById('poster-detail-text');
-
-        if (title && desc) {
-            titleTarget.innerText = title;
-            textTarget.innerText = desc;
-        }
-    }
+// 초기 로드 및 리사이즈 리스너
+window.addEventListener('load', initPosterSection);
+window.addEventListener("resize", () => {
+    initPosterSliderWithDelay(); 
 });
+
+let posterResizeTimer;
+function initPosterSliderWithDelay() {
+    clearTimeout(posterResizeTimer);
+    posterResizeTimer = setTimeout(initPosterSection, 300);
+}

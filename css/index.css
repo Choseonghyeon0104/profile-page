@@ -388,160 +388,84 @@ body{
 
 
 /* 포스터 */
-/* 1. 전체 레이아웃 및 컨테이너 */
+/* --- 포스터 섹션 최종 최적화 --- */
 #section-poster {
     width: 100%;
-    padding: 4vw 0; /* 화면 높이에 비례한 여백 */
-    overflow: hidden; 
-}
-
-.poster-swiper-container {
-    width: 100%;
-    max-width: 1400px; /* 조금 더 넓게 확보 */
-    margin: 0 auto;
-    position: relative; 
-}
-
-.posterSwiper {
-    margin-top: 3rem;
-    width: 100%;
-    /* 확대 시 위아래 요소와 겹치지 않도록 유동적인 패딩 설정 */
-    padding: 5vw 0; 
-    overflow: visible !important; 
+    padding: 100px 0;
+    overflow: hidden; /* 가로 스크롤 방지 핵심 */
     position: relative;
 }
 
-/* 2. 슬라이드 기본 스타일 (화면 너비에 따라 자동 축소) */
-.swiper-slide {
-    /* 화면 너비의 약 18% 정도로 설정하여 여러 장이 한눈에 보이게 합니다 */
-    width: 18vw !important; 
-    /* 너무 작아지거나 커지지 않도록 한계치 설정 */
-    min-width: 180px;
-    max-width: 280px;
-    
-    height: auto !important; 
-    aspect-ratio: 2 / 3; /* 포스터 비율 유지 */
-    
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    filter: blur(3px); 
-    opacity: 0.8;      
-    transform: scale(0.8); /* 주변은 약간 더 작게 */
-}
-
-/* 3. 가운데 활성화된 슬라이드 (강조 스타일) */
-.swiper-slide-active {
-    filter: blur(0) !important;
-    opacity: 1 !important;
-    transform: scale(1.2) !important; /* 확대 배율을 살짝 조정하여 안정감 부여 */
-    z-index: 10;
-}
-
-.poster-item {
+.poster-swiper-outer {
     width: 100%;
-    height: 100%;
-    border-radius: 12px;
+    padding: 80px 0;
+}
+
+.posterSwiper {
+    width: 100%;
+    overflow: visible !important;
+}
+
+/* 일정한 속도(Linear)를 위한 필수 CSS */
+.posterSwiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+/* 카드 디자인: 이미지와 설명 박스 완전 분리 */
+.poster-card {
+    background: transparent !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img-box {
+    width: 100%;
+    aspect-ratio: 2 / 3;
     overflow: hidden;
-    box-shadow: 0 1.5vw 3vw rgba(0,0,0,0.2);
+    border-radius: 8px; /* 곡률 축소 */
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-.poster-item img {
+.card-img-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
+    display: block;
 }
 
-/* 4. 화살표 버튼 커스텀 (반응형 크기) */
-.swiper-button-next,
-.swiper-button-prev {
-    background-color: rgba(198, 212, 255, 0.7); 
-    width: 2.5vw !important; /* 버튼 크기도 화면에 비례 */
-    height: 2.5vw !important;
-    min-width: 40px;
-    min-height: 40px;
-    border-radius: 50%;
-    z-index: 100 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-}
-
-/* 화살표 아이콘은 이전의 SVG 방식 유지 */
-.swiper-button-next::after, .swiper-button-prev::after { display: none !important; }
-
-.swiper-button-next {
-    right: 2vw !important;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M27 22L5 44l-2.1-2.1L22.8 22 2.9 2.1 5 0l22 22z' fill='%23000000'/%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat; background-size: 0.8vw auto; background-position: center;
-}
-
-.swiper-button-prev {
-    left: 2vw !important;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M0 22L22 0l2.1 2.1L4.2 22l19.9 19.9L22 44 0 22z' fill='%23000000'/%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat; background-size: 0.8vw auto; background-position: center;
-}
-
-/* 5. 하단 정보 박스 디자인 (유동적 크기) */
-.poster-detail-box {
-    width: 85%;
-    max-width: 800px;
-    margin: 2vw auto;
-    padding: 2.5vw;
+/* 설명 섹션: 포스터 밑으로 완전히 떨어뜨림 */
+.card-text-box {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px; /* 이미지와 간격 벌림 */
     background: #fff;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    box-sizing: border-box;
 }
 
-#poster-detail-title {
-    font-size: clamp(20px, 2vw, 26px); /* 최소 20px, 화면비례 2vw, 최대 26px */
+.card-text-box h3 {
+    font-size: 0.95rem;
     font-weight: 700;
-    color: #111;
-    margin-bottom: 1vw;
+    margin-bottom: 8px;
+    color: #2A399C;
 }
 
-#poster-detail-text {
-    font-size: clamp(14px, 1.2vw, 17px);
-    color: #555;
-    line-height: 1.6;
+.card-text-box p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #666;
     word-break: keep-all;
 }
-/* 1. 기본 버튼 트랜지션 설정 (부드러운 효과를 위해 기존 버튼 코드에 추가 권장) */
-.swiper-button-next,
-.swiper-button-prev {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+.posterSwiper .swiper-slide {
+    width: 260px !important; /* 카드 크기 적정화 */
 }
-
-/* 2. 버튼 전체 호버 효과 (배경 및 그림자) */
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: #ffffff !important; /* 배경을 더 밝고 불투명하게 */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* 입체감 있는 그림자 */
-    transform: translateY(-50%) scale(1.1) !important; /* 버튼 크기 1.15배 확대 */
-}
-
-/* 3. 오른쪽 버튼 호버 시 화살표 색상 변경 (빨간색 SVG) */
-.swiper-button-next:hover {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M27 22L5 44l-2.1-2.1L22.8 22 2.9 2.1 5 0l22 22z' fill='%23ff0000'/%3E%3C/svg%3E") !important;
-}
-
-/* 4. 왼쪽 버튼 호버 시 화살표 색상 변경 (빨간색 SVG) */
-.swiper-button-prev:hover {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M0 22L22 0l2.1 2.1L4.2 22l19.9 19.9L22 44 0 22z' fill='%23ff0000'/%3E%3C/svg%3E") !important;
-}
-
-/* 5. 버튼 클릭 시 (눌리는 피드백) */
-.swiper-button-next:active,
-.swiper-button-prev:active {
-    transform: translateY(-50%) scale(0.95) !important; /* 살짝 작아짐 */
-    background-color: #f8f8f8 !important;
-}
-
-/* 6. 화살표 비활성화 상태 (첫 번째/마지막 슬라이드일 때) */
-.swiper-button-disabled {
-    opacity: 0.2 !important;
-    cursor: auto;
-    pointer-events: none; /* 클릭 불가 */
-}
-
+/* JS에서 고정할 클래스 */
+.posterSwiper .swiper-slide.up-slide { transform: translateY(-40px); }
+.posterSwiper .swiper-slide.down-slide { transform: translateY(40px); }
 
 
 
@@ -682,6 +606,14 @@ body{
     .about-wrapper {
         padding-bottom:6rem;
     }
+
+
+
+    .posterSwiper .swiper-slide {
+        transform: none !important;
+        width: calc(100% / 2.3 - 20px) !important;
+    }
+
 }
 @media(max-width: 768px){
     .common-frame{
@@ -731,19 +663,11 @@ body{
     .modal-content {
         width: 60%;
     }
-    .swiper-slide {
-        width: 50vw !important; /* 모바일은 한 화면에 꽉 차게 */
-    }
-    .posterSwiper {
-        padding: 15vw 0;
-    }
-   .swiper-button-next {
-        background-size: 1.2vw auto;
+
+    .posterSwiper .swiper-slide {
+        width: 220px !important;
     }
 
-    .swiper-button-prev {
-        background-size: 1.2vw auto;
-    }
 }
 
 #smoke-cursor-canvas {
