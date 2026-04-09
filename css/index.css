@@ -384,15 +384,25 @@ body{
     font-size: 2rem;
     margin-top: 6rem;
 }
+.click-guide { display: none; }
 
 
 
 /* 포스터 */
+/* [추가] 페이지 전체의 가로 넘침을 원천 차단 */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 /* --- 포스터 섹션 최종 최적화 --- */
 #section-poster {
     width: 100%;
+    max-width: 100vw; /* 화면 너비를 절대 넘지 않도록 제한 */
     padding: 100px 0;
-    overflow: hidden; /* 가로 스크롤 방지 핵심 */
+    overflow-x: hidden !important; /* 내부 요소가 삐져나와도 스크롤 방지 */
     position: relative;
 }
 
@@ -403,6 +413,7 @@ body{
 
 .posterSwiper {
     width: 100%;
+    /* 슬라이드 지그재그를 보여주기 위해 visible 유지 */
     overflow: visible !important;
 }
 
@@ -411,19 +422,20 @@ body{
     transition-timing-function: linear !important;
 }
 
-/* 카드 디자인: 이미지와 설명 박스 완전 분리 */
+/* 카드 디자인 */
 .poster-card {
     background: transparent !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%; /* 슬라이드 너비에 맞춤 */
 }
 
 .card-img-box {
-    width: 100%;
+    width: 100%; 
     aspect-ratio: 2 / 3;
     overflow: hidden;
-    border-radius: 8px; /* 곡률 축소 */
+    border-radius: 8px;
     background: #fff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
@@ -435,16 +447,16 @@ body{
     display: block;
 }
 
-/* 설명 섹션: 포스터 밑으로 완전히 떨어뜨림 */
+/* 설명 섹션 */
 .card-text-box {
     width: 100%;
     padding: 15px;
-    margin-top: 20px; /* 이미지와 간격 벌림 */
+    margin-top: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: left;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 .card-text-box h3 {
@@ -460,14 +472,16 @@ body{
     color: #666;
     word-break: keep-all;
 }
+
 .posterSwiper .swiper-slide {
-    width: 260px !important; /* 카드 크기 적정화 */
+    width: 18rem !important; 
+    /* 미세하게 삐져나오는 여백 방지 */
+    box-sizing: border-box; 
 }
-/* JS에서 고정할 클래스 */
+
+/* 지그재그 위치 조정 */
 .posterSwiper .swiper-slide.up-slide { transform: translateY(-40px); }
 .posterSwiper .swiper-slide.down-slide { transform: translateY(40px); }
-
-
 
 @media(max-width: 1440px){
     .hero-txt2{
@@ -563,7 +577,7 @@ body{
 
 
     .pc-cloud-section { display: none !important; }
-    .mo-cloud-section { display: block !important; padding: 40px 0; }
+    .mo-cloud-section { display: block !important; padding: 3rem 0; }
     
     /* 슬라이드 2.3개 노출 */
     .swiper-slide { flex: 0 0 43% !important; width: 43% !important; padding: 0 10px; box-sizing: border-box; }
@@ -573,7 +587,7 @@ body{
     .modal-content {
         flex-direction: column;
         width: 40%;
-        max-height: 70vh;
+        max-height: 80vh;
     }
     .modal-body { flex-direction: column; }
     
@@ -606,12 +620,53 @@ body{
     .about-wrapper {
         padding-bottom:6rem;
     }
+    /* 인디케이터 전체 설정 */
+    .click-guide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem; /* 슬라이드와의 간격 */
+        color: #2A399C;   /* 포인트 컬러 */
+        font-weight: 700;
+        gap: 0.5rem;
+    }
+
+    /* 화살표 애니메이션 */
+    .click-guide .arrow {
+        font-size: 1.5rem;
+        animation: bounce 1s infinite; /* 1초마다 반복 */
+    }
+
+    .click-guide .txt {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    /* 통통 튀는 애니메이션 효과 */
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
 
 
 
     .posterSwiper .swiper-slide {
         transform: none !important;
         width: calc(100% / 2.3 - 20px) !important;
+    }
+    /* 텍스트 상자 내부의 모든 정렬을 가운데로 변경 */
+    .card-text-box {
+        text-align: center !important;
+        min-height: 10rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 텍스트가 적어도 세로 중앙에 오게 함 */
+    }
+
+    /* 제목 아래 여백 등 세부 조정 (필요 시) */
+    .card-text-box h3 {
+        margin-bottom: 10px;
     }
 
 }
@@ -664,8 +719,26 @@ body{
         width: 60%;
     }
 
-    .posterSwiper .swiper-slide {
-        width: 220px !important;
+.posterSwiper .swiper-slide {
+        /* [수정] 8rem 대신 75%를 사용해 화면의 3/4만 차지하게 합니다. */
+        /* 이렇게 하면 남는 25% 공간에 좌우 카드가 조금씩 보이게 됩니다. */
+        width: 75% !important; 
+    }
+
+    /* 지그재그 높이 조절 */
+    .posterSwiper .swiper-slide.up-slide { transform: translateY(-20px); }
+    .posterSwiper .swiper-slide.down-slide { transform: translateY(20px); }
+    
+    .card-text-box {
+        padding: 10px;
+        margin-top: 15px;
+        /* [추가] 모바일에서 제목과 내용을 가운데 정렬 */
+        text-align: center !important;
+    }
+
+    /* 이미지 박스 너비가 어긋나지 않도록 100% 확인 */
+    .card-img-box, .card-text-box {
+        width: 100% !important;
     }
 
 }
