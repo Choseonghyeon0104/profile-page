@@ -38,6 +38,8 @@
     <script src="./js/observer.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/swiper-poster.js"></script>
+    <script src="./js/swiper-banner.js"></script>
+    <script src="./js/detail.js"></script>
 
     
    
@@ -218,7 +220,8 @@
 
 
     <!-- 디자인 작업 -->
-    <div class="design-wrapper">
+    <!-- 제목, 픽스드 메뉴 -->
+    <div class="design-wrapper none-padding">
         <div class="common-frame">
             <h1 class="noto-serif-kr">Graphic Design</h1>
             <p>
@@ -233,9 +236,15 @@
                 <button onclick="scrollToSection('section-detail')">DETAIL</button>
             </nav>
 
+        </div>
+    </div>
+
+    <!-- 팝업 -->
+    <div class="design-wrapper">
+        <div class="common-frame">
             <div id="section-popup" class="design-content-section">
                 <div class="center-container">
-                    <h4 class="noto-serif-kr text-oval-bg">POPUP Design</h4>
+                    <h4 class="noto-serif-kr text-oval-bg">Popup</h4>
                 </div>
                 <p>
                     웹사이트에 들어온 사용자가 가장 먼저 마주하는 소중한 공간입니다. <br>
@@ -323,16 +332,21 @@
                     </div>
                 </section>
             </div>
+        </div>
+    </div>
 
+    <!-- 포스터 -->
+    <div class="poster-bg design-wrapper">
+        <div class="common-frame">
             <div id="section-poster">
                 <div class="center-container">
-                    <h4 class="noto-serif-kr text-oval-bg">Poster Design</h4>
+                    <h4 class="noto-serif-kr text-oval-bg">Poster</h4>
                 </div>
                 <p>
                     정돈된 질서를 바탕으로 정보의 중요도를 나누어 설계합니다. <br>
                     많은 정보 속에서도 무엇이 제일 중요한지 사용자가 바로 알 수 있도록, 탄탄한 기본기를 바탕으로 시각적인 즐거움을 줍니다.
                 </p>
-
+    
                 <div class="poster-swiper-outer">
                     <div class="swiper posterSwiper">
                         <div class="swiper-wrapper">
@@ -449,12 +463,282 @@
                     </div>
                 </div>
             </div>
-        
         </div>
-        
     </div>
+
+    <!-- 배너 -->
+    <div class="banner-bg design-wrapper">
+        <div class="common-frame">
+            <div id="section-bannner">
+                <div class="center-container">
+                    <h4 class="noto-serif-kr text-oval-bg">Banner</h4>
+                </div>
+                <p>
+                    다양한 화면 크기 속에서 브랜드의 색깔을 가장 잘 보여주는 얼굴입니다. <br>짧은 순간에도 메시지가 명확하게 읽히도록 중심을 잡고, 사용자가 자연스럽게 클릭하고 싶어지는 매력적인 화면을 만듭니다.
+                </p>
+                <div class="swiper bannerSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner1.jpg" alt="아이폰 17pro 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">01</span>
+                                    <h3>아이폰 17pro 배너</h3>
+                                    <p>블랙 배경 위 푸른 광원과 테크니컬 라인을 배치해 미래적인 분위기를 강조했으며, 강렬한 색 대비와 정교한 실루엣으로 현대적이고 깔끔한 느낌을 연출했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner2.jpg" alt="ADER ERROR 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">02</span>
+                                    <h3>ADER ERROR 배너</h3>
+                                    <p>아더에러의 시그니처 컬러인 블루를 중심으로 미세한 입자감과 아날로그적인 노이즈 효과를 적용하여, 브랜드 고유의 '편집(RE-EDIT)'이라는 개념을 시각적으로 구현했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner3.jpg" alt="일본 여행 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">03</span>
+                                    <h3>일본 여행 배너</h3>
+                                    <p>선명한 푸른 하늘과 초록빛 풀밭의 싱그러운 색감 조화를 통해, 청량하고 깨끗한 일본 여름 여행의 이미지를 시각적으로 담았습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner4.jpg" alt="도서 홍보 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">04</span>
+                                    <h3>도서 홍보 배너</h3>
+                                    <p>따뜻한 질감의 미색 배경 위에 깔끔한 타이포그래피와 도서 입체 이미지를 배치하여, 에세이가 주는 편안하고 서정적인 위로의 분위기를 감성적으로 전달했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner5.jpg" alt="향수 홍보 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">05</span>
+                                    <h3>향수 홍보 배너</h3>
+                                    <p>우아한 골드 톤의 그라데이션 배경과 은은하게 퍼지는 빛 입자 효과를 더해 향수의 고급스러운 이미지와 영원한 아름다움의 가치를 시각적으로 극대화했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner6.jpg" alt="지브리 전시 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">06</span>
+                                    <h3>지브리 전시 배너</h3>
+                                    <p>수채화 톤의 따뜻한 숲속 일러스트와 종이 질감을 살린 배경을 조화롭게 배치하여 지브리 특유의 감성적인 분위기와 동화 같은 따스함을 시각적으로 연출했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner7.jpg" alt="아디다스 신발 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">07</span>
+                                    <h3>아디다스 신발 배너</h3>
+                                    <p>깨끗한 화이트 톤 배경에 제품의 질감이 느껴지는 텍스처를 더하고 볼드한 타이포그래피를 중앙에 배치하여 브랜드의 오리지널리티와 현대적인 미니멀리즘을 동시에 강조했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner8.jpg" alt="자몽 에이드 음료 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">08</span>
+                                    <h3>자몽 에이드 음료 배너</h3>
+                                    <p>생동감 넘치는 오렌지 배경 위로 솟구치는 물방울과 흩날리는 잎사귀를 배치하여 제품의 신선함과 탄산의 청량함을 역동적인 비주얼로 표현했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner9.jpg" alt="설맞이 선물세트 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">09</span>
+                                    <h3>설맞이 보리굴비 선물세트 배너</h3>
+                                    <p>단아한 베이지 톤 배경에 전통 문양 노리개와 정갈한 제품 배치를 더해 명절 선물세트다운 격조와 신뢰감을 주는 전통적인 디자인을 완성했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner10.jpg" alt="블랙 프라이데이 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">10</span>
+                                    <h3>블랙 프라이데이 배너</h3>
+                                    <p>블랙과 레드의 강렬한 대비를 활용한 볼드 타이포그래피를 중앙에 배치하고 쇼핑백과 선물 상자 오브제를 입체적으로 구성하여 역동적이고 긴박한 세일 축제 분위기를 극대화했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner11.jpg" alt="화장품 홍보 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">11</span>
+                                    <h3>화장품 홍보 배너</h3>
+                                    <p>부드러운 베이지 배경에 신선한 과일 슬라이스와 잎사귀 오브제를 배치하여 비타민 성분의 생동감을 강조했으며, 제품 주위에 여유로운 공간을 두어 깨끗하고 자연스러운 분위기를 연출했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item">
+                                <div class="banner-img-box">
+                                    <img src="./img/banner12.jpg" alt="크리스마스 시즌 배너">
+                                </div>
+                                <div class="banner-text-box">
+                                    <span class="num">12</span>
+                                    <h3>크리스마스 시즌 배너</h3>
+                                    <p>따뜻한 베이지 톤의 빈티지 종이 질감 배경에 입체적인 별 오브제와 리스를 배치하여 연말의 아늑하고 설레는 분위기를 클래식하게 표현했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 상세페이지 -->
+    <div class="detail-bg design-wrapper">
+        <div class="common-frame">
+            <div id="section-detail">
+                <div class="center-container">
+                    <h4 class="noto-serif-kr text-oval-bg">Product Detail Page</h4>
+                </div>
+                <p>
+                    제품이나 서비스의 장점을 사용자의 눈높이에 맞춰 차근차근 설명합니다. <br>
+                    궁금한 점을 미리 해결해 주는 친절한 흐름을 설계하여, 사용자가 안심하고 선택할 수 있도록 믿음직한 디자인을 완성합니다.
+                </p>
+
+                <div class="detail-grid">
+                    <div class="detail-item" onclick="openDetailModal('./img/detail1.jpg', '향수 상세페이지', '차분한 베이지와 무채색 톤의 감성적인 화보를 중심으로 여백의 미를 극대화한 레이아웃을 설계하여 브랜드 특유의 서정적인 무드를 시각화했습니다.<br><br>제품의 원재료와 향의 디테일을 한 편의 이야기처럼 흐름 있게 배치하여 사용자가 브랜드의 고급스러운 가치를 자연스럽게 경험할 수 있도록 구현했습니다.')">
+                        <div class="detail-thumb">
+                            <img src="./img/detail1.jpg" alt="향수 상세페이지">
+                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                        </div>
+                        <h3 class="detail-title">향수 상세페이지</h3>
+                        <p class="detail-more-text">자세히보기</p>
+                    </div>
+
+                    <div class="detail-item" onclick="openDetailModal('./img/detail2.jpg', '의자 상세페이지', '밝고 깨끗한 화이트 톤의 라이프스타일 화보를 메인으로 활용하여 제품이 실제 주거 공간에 자연스럽게 어우러지는 실용적인 미학을 시각화했습니다.<br><br>의자의 핵심 기능과 소재 정보를 직관적인 아이콘과 레이아웃으로 설계하여 사용자가 제품의 기술적 장점을 한눈에 파악하고 신뢰를 가질 수 있도록 구현했습니다.')">
+                        <div class="detail-thumb">
+                            <img src="./img/detail2.jpg" alt="의자 상세페이지">
+                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                        </div>
+                        <h3 class="detail-title">의자 상세페이지</h3>
+                        <p class="detail-more-text">자세히보기</p>
+                    </div>
+
+                    <div class="detail-item" onclick="openDetailModal('./img/detail3.jpg', '와인 상세페이지', '화사한 핑크 톤의 색감과 흩날리는 벚꽃 오브제를 메인 비주얼로 활용하여 봄의 정취와 제품 특유의 낭만적인 분위기를 감성적으로 극대화했습니다.<br><br>와인의 맛과 향을 시각화한 잡지 스타일의 레이아웃과 정갈한 선물 세트 구성 이미지를 조화롭게 배치하여 제품의 심미적 가치와 특별함을 효과적으로 전달했습니다.')">
+                        <div class="detail-thumb">
+                            <img src="./img/detail3.jpg" alt="와인 상세페이지">
+                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                        </div>
+                        <h3 class="detail-title">와인 상세페이지</h3>
+                        <p class="detail-more-text">자세히보기</p>
+                    </div>
+
+                    <div class="detail-item" onclick="openDetailModal('./img/detail4.jpg', '화장품 앰플 상세페이지', '생동감 넘치는 옐로우와 그린 톤을 메인 컬러로 사용하여 제품의 핵심 성분인 비타민과 알로에의 신선한 에너지를 시각적으로 명확하게 전달했습니다.<br><br>사용 전후의 비교 수치와 피부 흡수 과정을 직관적인 그래픽으로 설계하여 제품의 기능적 신뢰도를 높이고 사용자가 기대 효과를 쉽게 이해할 수 있도록 구현했습니다.')">
+                        <div class="detail-thumb">
+                            <img src="./img/detail4.jpg" alt="화장품 앰플 상세페이지">
+                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                        </div>
+                        <h3 class="detail-title">화장품 앰플 상세페이지</h3>
+                        <p class="detail-more-text">자세히보기</p>
+                    </div>
+
+                    <div class="detail-item" onclick="openDetailModal('./img/detail5.jpg', '프리미엄 반려견 사료 상세페이지', '따뜻하고 부드러운 베이지 톤의 배경과 함께 실제 사료를 먹는 반려견들의 행복한 모습을 메인 비주얼로 활용하여 제품의 기호성과 친근함을 시각화했습니다.<br><br>원재료의 신선함과 영양 성분을 아이콘과 깔끔한 레이아웃으로 정리하여 정보의 가독성을 높였으며 브랜드가 추구하는 건강하고 정직한 가치를 신뢰감 있게 표현했습니다.')">
+                        <div class="detail-thumb">
+                            <img src="./img/detail5.jpg" alt="프리미엄 반려견 사료 상세페이지">
+                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                        </div>
+                        <h3 class="detail-title">프리미엄 반려견 사료 상세페이지</h3>
+                        <p class="detail-more-text">자세히보기</p>
+                    </div>
+
+                    <div class="detail-item" onclick="openDetailModal('./img/detail6.jpg', '헤드셋 상세페이지', '세련된 블루와 화이트 컬러 대비를 활용한 미니멀한 배경에 역동적인 인물 화보를 배치하여 제품의 현대적인 디자인과 몰입감 넘치는 사운드 경험을 시각화했습니다.<br><br>노이즈 캔슬링의 기술적 수치와 제품의 세부 디테일을 직관적인 그래픽으로 설계하여 고기능성 스마트 기기로서의 전문성과 제품에 대한 신뢰감을 동시에 확보했습니다.')">
+                        <div class="detail-thumb">
+                            <img src="./img/detail6.jpg" alt="헤드셋 상세페이지">
+                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                        </div>
+                        <h3 class="detail-title">헤드셋 상세페이지</h3>
+                        <p class="detail-more-text">자세히보기</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 상세페이지 모달 -->
+    <div id="detailCustomModal" class="detail-modal-wrap">
+        <div class="detail-modal-bg" onclick="closeDetailModal()"></div>
+        
+        <div class="detail-modal-content">
+            <button class="detail-modal-close" onclick="closeDetailModal()">×</button>
+            
+            <div class="detail-modal-scroll-area">
+                <img id="detailModalFullImg" src="" alt="상세페이지 전체보기">
+            </div>
+
+            <div class="detail-modal-text-box">
+                <h3 id="detailModalTitle">제목이 들어갑니다</h3>
+                <p id="detailModalDesc">설명글이 들어갑니다</p>
+            </div>
+        </div>
+    </div>
+
+
     
 
+
+
+
+    <!-- 맨 아래에 위치하는 것들 -->
     <!-- 모달 -->
     <div id="imageModal" class="modal-overlay" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">

@@ -1,3 +1,6 @@
+/* 메인 컬러 #007BFF */
+/* 포인트 컬러 #FF2A5F */
+/* 톤다운 컬러 #111827 */
 html{
     font-family: 'Pretendard',sans-serif;
     font-size: var(--basic-font-pc);
@@ -39,8 +42,8 @@ body{
     align-items: center;
 }
 .hero-txt2 {
-    font-size: 140px;
-    color: #000000;
+    font-size: 7rem;
+    color: #1A2BFE;
     text-shadow: 2px 2px 30px rgb(193 224 239 / 50%);
     text-align: center;
 }
@@ -95,7 +98,7 @@ body{
 }
 .intro-txt h1{
     font-size: 8.5rem;
-    color: #2A399C;
+    color: #1A2BFE;
     margin-bottom: var(--space-normal);
 }
 .intro-txt span p{
@@ -159,7 +162,7 @@ body{
     border-radius: 1rem;
 }
 .about-wrapper h1{
-    color: #2A399C;
+    color: #1A2BFE;
     font-size: 6rem;
     text-align: center;
 }
@@ -185,7 +188,7 @@ body{
 }
 .certi-grid li {
     display: grid;
-    grid-template-columns: 100px 1fr max-content;
+    grid-template-columns: 5rem 1fr max-content;
     gap: 2rem; 
     margin-bottom: var(--space-normal); /* 줄 간격 */
     align-items: center; /* 세로 중앙 정렬 */
@@ -214,14 +217,14 @@ body{
     margin-top: var(--space-3x-large);
 }
 .skill h3{
-    color: #0C195C;
+    color: #1A2BFE;
     text-shadow: 2px 2px 30px rgb(193 224 239 / 50%);
     font-size: 3rem;
     text-align: center;
     margin-bottom: var(--space-x-large);
 }
 .skill-grid{
-    color: #1a2e81;
+    color: #111827;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 2rem 1rem;
@@ -314,7 +317,7 @@ body{
 .modal-text { width: 50%; padding: 40px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; }
 #modalTitle {
     font-size: 1.4rem;
-    color: #2A399C;
+    color: #111827;
     margin: 0 0 15px;
     font-weight: 700;
     line-height: 1.2;
@@ -338,20 +341,16 @@ body{
 .text-oval-bg::before {
     content: '';
     position: absolute;
-    top: 50%; /* 세로 중앙 */
-    left: 50%; /* 가로 중앙 */
-    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
-    
-    /* 원의 크기 설정: 텍스트 너비의 110%, 높이는 적절하게 */
-    width: 110%; 
-    height: 50%; 
-    
-    /* 타원형 만들기 */
-    background-color: rgba(133, 163, 238, 0.6); /* 이미지와 유사한 연한 파랑색 */
-    border-radius: 50%; /* 원형/타원형을 만드는 핵심 속성 */
-    
-    z-index: -1; /* 텍스트 뒤로 보냅니다 */
-    filter: blur(3px); /* 테두리를 부드럽게 뭉개는 효과 (이미지 느낌 재현) */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -46%);
+    width: 110%;
+    height: 110%;
+    /* background-color: rgb(0 76 255 / 50%);
+    border-radius: 1rem;
+    z-index: -1; */
+    /* color: #fff; */
+    /* box-shadow: 0 0.1rem 0.5rem #0000003b; */
 }
 .center-container {
     display: flex;             /* 정렬을 위한 플렉스 박스 활성화 */
@@ -359,10 +358,10 @@ body{
     align-items: center;        /* 세로 중앙 정렬 */
     margin-bottom: 3rem;
 }
-.center-container+p{
+.center-container+p {
     text-align: center;
+    word-break: keep-all;
 }
-
 .design-wrapper{
     background-color: rgba(255, 255, 255, 0.7);
     padding-top: 7rem;
@@ -371,7 +370,7 @@ body{
 .design-wrapper .common-frame h1{
     font-size: 5rem;
     text-align: center;
-    color: #2A399C;
+    color: #1A2BFE;
     line-height: 1.2;
     margin-bottom: 3rem;
 }
@@ -379,36 +378,33 @@ body{
     text-align: center;
     margin-bottom: 6rem;
 }
-.design-wrapper .common-frame h4.text-oval-bg{
+.design-wrapper .common-frame h4.text-oval-bg {
     text-align: center;
     font-size: 2rem;
-    margin-top: 6rem;
+    color: #FF2A5F;
 }
 .click-guide { display: none; }
-
+.design-wrapper.none-padding{
+    padding-bottom: 0;
+}
 
 
 /* 포스터 */
-/* [추가] 페이지 전체의 가로 넘침을 원천 차단 */
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
+
+
 
 /* --- 포스터 섹션 최종 최적화 --- */
 #section-poster {
     width: 100%;
-    max-width: 100vw; /* 화면 너비를 절대 넘지 않도록 제한 */
-    padding: 100px 0;
-    overflow-x: hidden !important; /* 내부 요소가 삐져나와도 스크롤 방지 */
+    max-width: 100vw;
+    overflow-x: hidden !important;
     position: relative;
 }
 
 .poster-swiper-outer {
     width: 100%;
     padding: 80px 0;
+    margin-top: 3rem;
 }
 
 .posterSwiper {
@@ -463,7 +459,7 @@ html, body {
     font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #2A399C;
+    color: #111827;
 }
 
 .card-text-box p {
@@ -482,6 +478,336 @@ html, body {
 /* 지그재그 위치 조정 */
 .posterSwiper .swiper-slide.up-slide { transform: translateY(-40px); }
 .posterSwiper .swiper-slide.down-slide { transform: translateY(40px); }
+/* =========================================
+   배경 커스텀 스타일: 큰 배경 글씨 추가
+========================================= */
+
+/* 1. 배경 글씨가 배치될 기준점을 잡습니다. */
+.poster-bg {
+    background-color: #fbfeff;
+    position: relative; /* 배경 글씨의 기준점이 됩니다. */
+    overflow: hidden; /* 배경 글씨가 섹션 밖으로 나가지 않도록 합니다. */
+}
+
+/* 2. 가상 요소를 사용하여 배경 글씨를 생성합니다. */
+.poster-bg::before {
+    content: 'POSTER';
+    position: absolute;
+    top: 87%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    font-size: 20vw;
+    font-weight: 900;
+    color: #000839;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 3. 기존 콘텐츠들이 배경 글씨보다 위에 보이도록 설정합니다. */
+.poster-bg .common-frame {
+    position: relative;
+    z-index: 1; /* 배경 글씨(z-index: 0)보다 위에 보이게 함 */
+}
+
+
+
+
+
+
+
+
+/* 배너 */
+.banner-bg {
+    position: relative;
+}
+
+.banner-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    
+    background:linear-gradient(rgba(0, 162, 255, 0.2), rgba(0, 162, 255, 0.2)),
+    url(../img/pattern-check.png) repeat 0 0;
+    opacity: 0.2; 
+    
+    z-index: 0; /* 배경 역할을 하도록 0층에 배치 */
+    pointer-events: none; /* 배경이 클릭을 방해하지 못하게 막음 */
+}
+
+.banner-bg .common-frame {
+    position: relative;
+    z-index: 1; /* 컨텐츠를 1층으로 올려서 배경(0층)보다 무조건 위에 보이게 함 */
+}
+/* =========================================
+   배너 섹션 공통 스타일
+========================================= */
+#section-bannner {
+    width: 100%;
+    padding: 80px 0;
+    overflow: hidden; /* 전체 영역 밖으로 나가는 요소 완벽 차단 */
+}
+
+.bannerSwiper {
+    width: 100%;
+    padding-bottom: 60px; /* 하단 도트(페이지네이션) 공간 */
+}
+
+/* --- PC 레이아웃 (1025px 이상) --- */
+.banner-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+/* 짝수 번째 배너는 이미지가 오른쪽, 텍스트가 왼쪽으로 자동 교차 */
+.bannerSwiper .swiper-slide:nth-child(even) .banner-item {
+    flex-direction: row-reverse;
+}
+
+/* [해결 1] 높이 일정하게 고정 */
+/* 텍스트 양에 상관없이 이미지가 1920:700 비율로 전체 높이를 딱 잡아줍니다. */
+.banner-img-box {
+    flex: 4;
+    width: 100%;
+    aspect-ratio: 1920 / 700;
+    overflow: hidden;
+}
+
+.banner-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* [해결 2] 마우스 드래그 걸림(안 놓아지는 현상) 완벽 해결 */
+    /* 브라우저가 이미지를 '저장/드래그' 하려는 기본 동작을 꺼버립니다. */
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.banner-text-box {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.banner-text-box .num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1A2BFE;
+    margin-bottom: 1.5rem;
+}
+
+.banner-text-box h3 {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    word-break: keep-all;
+}
+
+.banner-text-box p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #555;
+    word-break: keep-all;
+}
+/* --- 페이지네이션 (도트) --- */
+.bannerSwiper .swiper-pagination {
+    bottom: 10px !important;
+}
+
+.bannerSwiper .swiper-pagination-bullet {
+    transition: all 0.3s;
+}
+
+.bannerSwiper .swiper-pagination-bullet-active {
+    background: #2A399C !important;
+    width: 30px;
+    border-radius: 5px;
+}
+
+
+
+/* 상세페이지 */
+/* =========================================
+   상세페이지 썸네일 그리드 디자인
+========================================= */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 2rem;
+    margin-top: 3rem;
+}
+
+.detail-item {
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;   
+}
+
+.detail-thumb {
+    position: relative; /* 오버레이 기준점 */
+    width: 100%;
+    aspect-ratio: 4 / 6;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #f5f5f5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.detail-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top; /* 윗부분만 예쁘게 자름 */
+    transition: transform 0.4s ease;
+}
+
+.detail-item:hover .detail-thumb img {
+    transform: scale(1.08);
+}
+
+/* PC 호버 오버레이 (전체보기) */
+.detail-hover-overlay {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+    line-height: 1.6;
+}
+
+.detail-item:hover .detail-hover-overlay { opacity: 1; }
+
+.detail-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #222;
+    margin-top: 1.5rem;
+    word-break: keep-all;
+    transition: color 0.3s;
+}
+
+.detail-item:hover .detail-title { color: #1A2BFE; }
+
+/* 모바일 전용 텍스트 (자세히보기) */
+.detail-more-text {
+    display: none; 
+    font-size: 0.95rem;
+    color: #888;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* =========================================
+   상세페이지 전용 모달 팝업창 (좌우 배치)
+========================================= */
+.detail-modal-wrap {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: 99999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-modal-bg {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.detail-modal-content {
+    position: relative;
+    z-index: 100000;
+    width: 90%;
+    max-width: 1300px;
+    height: 85vh;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.detail-modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.detail-modal-scroll-area {
+    flex: 10;
+    height: 100%;
+    overflow-y: auto;
+    background: #f4f4f4;
+}
+
+.detail-modal-scroll-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-modal-text-box {
+    flex: 4;
+    height: 100%;
+    padding: 4rem 2rem;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.detail-modal-text-box h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    word-break: keep-all;
+    font-weight: 700;
+}
+
+.detail-modal-text-box p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    word-break: keep-all;
+    padding-top: 1.5rem;
+    border-top: 1px solid #555;
+}
+
+
 
 @media(max-width: 1440px){
     .hero-txt2{
@@ -519,6 +845,38 @@ html, body {
     .exper li{
         gap: var(--space-large);
     }
+
+
+
+    /* 배너 */
+    #section-bannner {
+        /* [해결 3] 화면 가로폭 전체(100vw)를 꽉 채우는 공식 */
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 40px 0;
+    }
+
+    .banner-item {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+
+    .banner-img-box {
+        flex: none;
+        width: 100%; /* 이미지가 화면 가로를 꽉 채움 */
+        border-radius: 0; /* 둥근 모서리를 없애서 더 꽉 차 보이게 함 */
+    }
+
+    .banner-text-box {
+        text-align: center; /* 텍스트 중앙 정렬 */
+        padding: 0 1.5rem;
+    }
+
+    .banner-text-box h3 {
+        font-size: 2rem;
+    }
+
+
 }
 @media(max-width: 1024px){
    
@@ -547,7 +905,7 @@ html, body {
     .hero-txt2-smart{
         font-size: 80px;
         line-height: 1.2;
-        color: #000000;
+        color: #1A2BFE;
         text-shadow: 2px 2px 30px rgb(193 224 239 / 50%);
         text-align: center;
 
@@ -580,7 +938,7 @@ html, body {
     .mo-cloud-section { display: block !important; padding: 3rem 0; }
     
     /* 슬라이드 2.3개 노출 */
-    .swiper-slide { flex: 0 0 43% !important; width: 43% !important; padding: 0 10px; box-sizing: border-box; }
+    .mo-cloud-section .swiper-slide { flex: 0 0 43% !important; width: 43% !important; padding: 0 10px; box-sizing: border-box; }
     .mo-cloud-section .popup-item { width: 100%; aspect-ratio: 1 / 1; border-radius: 25px; overflow: hidden; transform: none !important; }
     .mo-cloud-section .popup-item img { width: 100%; height: 100%; object-fit: cover; }
     .mo-cloud-section .text-data { display: none; }
@@ -603,7 +961,7 @@ html, body {
         object-fit: contain; /* [중요] 잘림 없이 온전히 다 보임 */
     }
     
-    .modal-text { width: 100%; padding: 25px; justify-content: flex-start; overflow-y: auto; }
+    .modal-text { width: 100%; padding: 1.5rem; justify-content: flex-start; overflow-y: auto; }
     #modalTitle {
         font-size: 1.2rem;
         margin-bottom: 10px;
@@ -615,7 +973,7 @@ html, body {
         font-size: 4rem;
     }
     .design-wrapper .common-frame h4.text-oval-bg {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .about-wrapper {
         padding-bottom:6rem;
@@ -650,7 +1008,10 @@ html, body {
     }
 
 
-
+    .posterSwiper .swiper-wrapper {
+        /* 터치 시 손가락 끝에 붙는 느낌을 위해 기본 애니메이션(ease)을 유지합니다. */
+        transition-timing-function: ease !important;
+    }
     .posterSwiper .swiper-slide {
         transform: none !important;
         width: calc(100% / 2.3 - 20px) !important;
@@ -668,6 +1029,9 @@ html, body {
     .card-text-box h3 {
         margin-bottom: 10px;
     }
+
+
+
 
 }
 @media(max-width: 768px){
@@ -714,12 +1078,18 @@ html, body {
         flex-direction: column;
         gap: 1.5rem;
     }
-    .swiper-slide { flex: 0 0 75% !important; width: 75% !important; }
+    .mo-cloud-section .swiper-slide { flex: 0 0 75% !important; width: 75% !important; }
     .modal-content {
         width: 60%;
     }
 
-.posterSwiper .swiper-slide {
+    .poster-bg::before {
+        top: 90%;
+        left: 55%;
+        font-size: 22vw;
+    }
+
+    .posterSwiper .swiper-slide {
         /* [수정] 8rem 대신 75%를 사용해 화면의 3/4만 차지하게 합니다. */
         /* 이렇게 하면 남는 25% 공간에 좌우 카드가 조금씩 보이게 됩니다. */
         width: 75% !important; 
@@ -741,6 +1111,62 @@ html, body {
         width: 100% !important;
     }
 
+
+    /* 상세페이지 */
+.detail-grid { grid-template-columns: 1fr; }
+    .detail-hover-overlay { display: none !important; }
+    .detail-more-text { display: block; }
+    
+    .detail-modal-content { flex-direction: column; }
+    .detail-modal-scroll-area { flex: 1; }
+    .detail-modal-text-box {
+        flex: none;
+        height: auto;
+        padding: 2rem 1.5rem;
+        border-left: none;
+        border-top: 1px solid #ddd; 
+        justify-content: flex-start;
+    }
+    .detail-modal-text-box h3 { 
+        font-size: 1.6rem; 
+        margin-bottom: 1rem; 
+        text-align: center;
+    }
+    .detail-modal-text-box p { font-size: 1rem; }
+}
+/* 280화면 대응 */
+@media(max-width:400px){
+    .btt.on {
+        font-size: 5rem;
+    }
+    .about-wrapper h1 {
+        font-size: 5rem;
+    }
+    .certi-grid li p {
+        word-break: break-all;
+    }
+    .certi-grid li {
+        align-items: start;
+    }
+    .banner-text-box h3 {
+        font-size: 1.2rem;
+    }
+    .detail-modal-text-box h3 {
+        font-size: 1.2rem;
+    }
+    .detail-modal-text-box {
+        max-height: 30vh;
+        overflow: auto;
+    }
+    .modal-text {
+        max-height: 20vh;
+    }
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 #smoke-cursor-canvas {
@@ -753,4 +1179,11 @@ html, body {
     pointer-events: none;
     /* [수정] blur를 15px로 낮춰 잔상이 사라질 때 더 깔끔하게 보이게 합니다 */
     filter: blur(15px) contrast(1.1); 
+}
+/* [추가] 페이지 전체의 가로 넘침을 원천 차단 */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
