@@ -1,6 +1,6 @@
-/* 메인 컬러 #007BFF */
-/* 포인트 컬러 #FF2A5F */
-/* 톤다운 컬러 #111827 */
+/* 메인 컬러 #1D4ED8 */
+/* 포인트 컬러 #E11D48 */
+/* 톤다운 컬러 #FFFFFF */
 html{
     font-family: 'Pretendard',sans-serif;
     font-size: var(--basic-font-pc);
@@ -27,7 +27,7 @@ body{
 .intro {
     background: #fff;
     margin-top: 100vh;
-    padding: 6rem 0;
+    padding: 8rem 0;
 }
 .common-frame{
     width: auto;
@@ -43,7 +43,7 @@ body{
 }
 .hero-txt2 {
     font-size: 7rem;
-    color: #1A2BFE;
+    color: #1D4ED8;
     text-shadow: 2px 2px 30px rgb(193 224 239 / 50%);
     text-align: center;
 }
@@ -98,7 +98,7 @@ body{
 }
 .intro-txt h1{
     font-size: 8.5rem;
-    color: #1A2BFE;
+    color: #1D4ED8;
     margin-bottom: var(--space-normal);
 }
 .intro-txt span p{
@@ -162,7 +162,7 @@ body{
     border-radius: 1rem;
 }
 .about-wrapper h1{
-    color: #1A2BFE;
+    color: #1D4ED8;
     font-size: 6rem;
     text-align: center;
 }
@@ -217,7 +217,7 @@ body{
     margin-top: var(--space-3x-large);
 }
 .skill h3{
-    color: #1A2BFE;
+    color: #1D4ED8;
     text-shadow: 2px 2px 30px rgb(193 224 239 / 50%);
     font-size: 3rem;
     text-align: center;
@@ -242,6 +242,9 @@ body{
 .skill-grid li:hover{
     box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.3);
     transform: translateY(-0.4rem);
+}
+.skill-grid li:hover h4{
+    color: #E11D48;
 }
 .skill-grid li h4{
     font-size: 2rem;
@@ -376,17 +379,16 @@ body{
 }
 .design-wrapper .common-frame h1+p{
     text-align: center;
-    margin-bottom: 6rem;
+    padding-bottom: 6rem;
 }
 .design-wrapper .common-frame h4.text-oval-bg {
     text-align: center;
     font-size: 2rem;
-    color: #FF2A5F;
+    color: #1D4ED8;
 }
 .click-guide { display: none; }
-.design-wrapper.none-padding{
-    padding-bottom: 0;
-}
+
+
 
 
 /* 포스터 */
@@ -448,7 +450,7 @@ body{
     width: 100%;
     padding: 15px;
     margin-top: 20px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: left;
@@ -498,7 +500,7 @@ body{
     transform: translate(-50%, -50%);
     font-size: 20vw;
     font-weight: 900;
-    color: #000839;
+    color: #E11D48;
     opacity: 0.1;
     z-index: 0;
     pointer-events: none;
@@ -568,8 +570,10 @@ body{
 }
 
 /* 짝수 번째 배너는 이미지가 오른쪽, 텍스트가 왼쪽으로 자동 교차 */
-.bannerSwiper .swiper-slide:nth-child(even) .banner-item {
-    flex-direction: row-reverse;
+@media (min-width: 1441px) {
+    .swiper-slide.reverse-layout .banner-item {
+        flex-direction: row-reverse !important;
+    }
 }
 
 /* [해결 1] 높이 일정하게 고정 */
@@ -602,7 +606,7 @@ body{
     display: block;
     font-size: 2rem;
     font-weight: 800;
-    color: #1A2BFE;
+    color: #E11D48;
     margin-bottom: 1.5rem;
 }
 
@@ -708,7 +712,7 @@ body{
     transition: color 0.3s;
 }
 
-.detail-item:hover .detail-title { color: #1A2BFE; }
+.detail-item:hover .detail-title { color: #E11D48; }
 
 /* 모바일 전용 텍스트 (자세히보기) */
 .detail-more-text {
@@ -807,6 +811,64 @@ body{
     border-top: 1px solid #555;
 }
 
+/* 스티키메뉴 */
+/* =========================================
+   디자인 섹션 스티키 네비게이션 & 배경 메우기 (최종)
+========================================= */
+
+/* 1. 타이틀 영역 하단 배경을 아래로 쭉 늘려서 빈틈을 채웁니다 */
+.design-wrapper.none-padding {
+    background-color: transparent; /* 흰색 반투명 배경 유지 */
+    padding-top: 7rem;
+    padding-bottom: 6rem !important; /* 아래 공간을 넉넉히 뺌 */
+}
+.design-wrapper.none-padding p {
+    padding-bottom: 0;
+}
+
+/* 2. 네비게이션을 늘어난 배경 위로 끌어올려 안착시킵니다 */
+.design-nav {
+    position: sticky;
+    top: 2rem; /* 스크롤 내릴 때 화면 상단에서 떨어질 간격 */
+    z-index: 9999;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: max-content;
+    
+    /* [핵심] 위로(-4rem) 끌어올리고, 아래 여백(4rem)을 줍니다 */
+    margin: -4rem auto 4rem auto; 
+    
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 네비게이션 버튼 기본 스타일 */
+.design-nav button {
+    background: none;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #64748B;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 마우스를 올리거나, 현재 섹션에 불이 켜졌을 때 */
+.design-nav button:hover,
+.design-nav button.active {
+    background: #1D4ED8; 
+    color: #fff;
+    box-shadow: 0 0.2rem 0.75rem rgba(29, 78, 216, 0.3);
+}
 
 
 @media(max-width: 1440px){
@@ -905,7 +967,7 @@ body{
     .hero-txt2-smart{
         font-size: 80px;
         line-height: 1.2;
-        color: #1A2BFE;
+        color: #1D4ED8;
         text-shadow: 2px 2px 30px rgb(193 224 239 / 50%);
         text-align: center;
 
@@ -985,7 +1047,7 @@ body{
         align-items: center;
         justify-content: center;
         margin-top: 2rem; /* 슬라이드와의 간격 */
-        color: #2A399C;   /* 포인트 컬러 */
+        color: #E11D48;   /* 포인트 컬러 */
         font-weight: 700;
         gap: 0.5rem;
     }
@@ -1113,7 +1175,7 @@ body{
 
 
     /* 상세페이지 */
-.detail-grid { grid-template-columns: 1fr; }
+    .detail-grid { grid-template-columns: 1fr; }
     .detail-hover-overlay { display: none !important; }
     .detail-more-text { display: block; }
     
@@ -1122,7 +1184,7 @@ body{
     .detail-modal-text-box {
         flex: none;
         height: auto;
-        padding: 2rem 1.5rem;
+        padding: 1.2rem;
         border-left: none;
         border-top: 1px solid #ddd; 
         justify-content: flex-start;
@@ -1133,6 +1195,22 @@ body{
         text-align: center;
     }
     .detail-modal-text-box p { font-size: 1rem; }
+    
+
+.design-nav {
+        top: 10px;
+        width: 90%;
+        padding: 8px;
+        gap: 5px;
+        /* 모바일 비율에 맞춰 끌어올리는 높이도 조절 */
+        margin: -3.5rem auto 3rem auto; 
+    }
+    .design-nav button {
+        padding: 10px 0;
+        flex: 1;
+        font-size: 0.85rem;
+    }
+
 }
 /* 280화면 대응 */
 @media(max-width:400px){
@@ -1155,18 +1233,13 @@ body{
         font-size: 1.2rem;
     }
     .detail-modal-text-box {
-        max-height: 30vh;
+        max-height: 25vh;
         overflow: auto;
     }
     .modal-text {
-        max-height: 20vh;
+        max-height: 15vh;
     }
-    html, body {
-        width: 100%;
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-    }
+
 }
 
 #smoke-cursor-canvas {
@@ -1175,15 +1248,8 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 9999;
     pointer-events: none;
-    /* [수정] blur를 15px로 낮춰 잔상이 사라질 때 더 깔끔하게 보이게 합니다 */
-    filter: blur(15px) contrast(1.1); 
-}
-/* [추가] 페이지 전체의 가로 넘침을 원천 차단 */
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+    /* 블러를 15px로 유지해서 경계를 아주 부드럽게 만듭니다 */
+    filter: blur(15px) contrast(1.2); 
 }

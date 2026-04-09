@@ -53,12 +53,16 @@ function openModal(el) {
     document.getElementById("modalDesc").innerText = desc;
     
     modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
+    
+    // [수정된 부분] 세로 스크롤만 막습니다!
+    document.body.style.overflowY = "hidden";
 }
 
 function closeModal() {
     document.getElementById("imageModal").style.display = "none";
-    document.body.style.overflow = "auto";
+    
+    // [수정된 부분] 세로 스크롤만 복구합니다!
+    document.body.style.overflowY = "";
 }
 
 window.addEventListener('load', initApp);

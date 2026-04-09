@@ -40,6 +40,7 @@
     <script src="./js/swiper-poster.js"></script>
     <script src="./js/swiper-banner.js"></script>
     <script src="./js/detail.js"></script>
+    <script src="./js/sticky.js"></script>
 
     
    
@@ -118,7 +119,7 @@
     <!-- 어바웃 미 -->
     <div class="about-wrapper">
         <div class="common-frame">
-            <h1 class="noto-serif-kr">About Me</h1>
+            <h1 class="noto-serif-kr btt">About Me</h1>
             <p>사용자의 편의를 위해 흔들림 없는 구조를 만드는 웹디자이너 조성현입니다.</p>
             <div class="about-grid">
                 <div>
@@ -221,492 +222,495 @@
 
     <!-- 디자인 작업 -->
     <!-- 제목, 픽스드 메뉴 -->
-    <div class="design-wrapper none-padding">
-        <div class="common-frame">
-            <h1 class="noto-serif-kr">Graphic Design</h1>
-            <p>
-                사용자의 시선이 머무는 첫 번째 지점을 설계합니다. <br>
-                이벤트의 목적을 명확히 전달하고, 브랜드의 색깔을 가장 잘 보여주는 기획 의도에 충실한 그래픽을 완성합니다.
-            </p>
+    <div class="design">
 
-            <nav class="design-nav">
-                <button onclick="scrollToSection('section-popup')">POP UP</button>
-                <button onclick="scrollToSection('section-poster')">POSTER</button>
-                <button onclick="scrollToSection('section-banner')">BANNER</button>
-                <button onclick="scrollToSection('section-detail')">DETAIL</button>
-            </nav>
-
-        </div>
-    </div>
-
-    <!-- 팝업 -->
-    <div class="design-wrapper">
-        <div class="common-frame">
-            <div id="section-popup" class="design-content-section">
-                <div class="center-container">
-                    <h4 class="noto-serif-kr text-oval-bg">Popup</h4>
-                </div>
+        <div class="design-wrapper none-padding">
+            <div class="common-frame">
+                <h1 class="noto-serif-kr btt">Graphic Design</h1>
                 <p>
-                    웹사이트에 들어온 사용자가 가장 먼저 마주하는 소중한 공간입니다. <br>
-                    복잡한 장식보다는 중요한 내용이 한눈에 들어올 수 있게 정돈하여, 이벤트나 공지사항을 기분 좋게 전달합니다.
+                    사용자의 시선이 머무는 첫 번째 지점을 설계합니다. <br>
+                    이벤트의 목적을 명확히 전달하고, 브랜드의 색깔을 가장 잘 보여주는 기획 의도에 충실한 그래픽을 완성합니다.
                 </p>
-                <!-- 팝업 -->
-                <section class="pc-cloud-section">
-                    <div class="pc-container">
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup1.jpg" alt="럭키드로우 팝업">
-                            <div class="overlay"><div class="text"><h3>럭키 드로우 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">행운의 초록색과 입체적인 3D 오브젝트로 보상의 풍성함을 강조했으며, 시선이 제목에서 하단 버튼으로 자연스럽게 흐르도록 설계해 클릭을 유도했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup2.jpg" alt="가구 할인 팝업">
-                            <div class="overlay"><div class="text"><h3>가구 할인 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">따뜻한 인테리어 배경에 파란색을 포인트 컬러로 사용해 신뢰감을 주었으며, 중앙의 굵은 타이포그래피로 특가 혜택을 강렬하게 강조했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup3.jpg" alt="던킨도넛&카카카오 이벤트 팝업">
-                            <div class="overlay"><div class="text"><h3>던킨도넛&카카오 이벤트 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">채도 높은 오렌지색 배경과 친숙한 캐릭터를 중앙에 배치해 주목도를 높였으며, 하단 영역을 노란색 바(Bar)로 분리하여 혜택 정보가 한눈에 들어오도록 설계했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup4.jpg" alt="항공권 쿠폰 팝업">
-                            <div class="overlay"><div class="text"><h3>항공권 쿠폰 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">청량한 블루 톤과 3D 지구본 오브젝트로 여행의 설렘을 시각화했으며, 핵심 키워드와 위치 핀에 노란색을 사용해 혜택을 강조했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup5.jpg" alt="새해 세일 이벤트 팝업">
-                            <div class="overlay"><div class="text"><h3>새해 세일 이벤트 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">하늘색 배경과 눈밭 위의 말 인형을 배치해 겨울 신년의 계절감을 감성적으로 연출했으며, 상단에 굵은 흰색 글씨를 써서 세일 메시지를 명확히 강조했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup6.jpg" alt="퍼스널컬러 전시 팝업디자인">
-                            <div class="overlay"><div class="text"><h3>퍼스널컬러 전시 팝업디자인</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">네 가지 컬러의 역동적인 붓터치로 퍼스널 큐레이션의 전문성을 시각화하고, 간결한 타이포그래피와 대비되는 버튼 배치로 가독성과 사용자 참여를 높였습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup7.jpg" alt="새학기 온라인 강의 팝업">
-                            <div class="overlay"><div class="text"><h3>새학기 온라인 강의 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">봄 시즌의 화사한 벚꽃 연출과 서비스 타겟을 직관적으로 보여주는 캐릭터 일러스트를 활용하여, 새 학기 프로모션의 주목도와 브랜드 친밀감을 높였습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup8.jpg" alt="CGV 출석체크 팝업">
-                            <div class="overlay"><div class="text"><h3>CGV 출석체크 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">입체적인 제품 연출과 밤하늘의 조명 효과로 극장의 현장감을 극대화하고, 명도 대비를 활용한 타이포그래피로 프로모션의 주목도를 높였습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup9.jpg" alt="블랙프라이데이 팝업-1">
-                            <div class="overlay"><div class="text"><h3>블랙프라이데이 팝업-1</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">블랙 배경에 블루 포인트 컬러를 매치하여 세련된 분위기를 연출하고, 대담한 타이포그래피와 입체적인 선물 상자 오브제를 활용해 블랙 프라이데이의 강렬한 인상과 구매 욕구를 자극했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup10.jpg" alt="블랙프라이데이 팝업-2">
-                            <div class="overlay"><div class="text"><h3>블랙프라이데이 팝업-2</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">강렬한 레드와 블랙의 대비를 통해 브랜드의 역동성을 강조하고, 경고 테이프 모티프와 대담한 타이포그래피를 활용하여 블랙 프라이데이 특유의 긴박함과 압도적인 할인 혜택을 시각화했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup11.jpg" alt="크리스마스 팝업">
-                            <div class="overlay"><div class="text"><h3>크리스마스 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">어두운 배경과 강렬한 레드 컬러의 대조를 활용해 시선을 집중시키고, 귀여운 3D 산타 캐릭터와 네온 효과를 더해 시즌 특유의 설렘과 트렌디한 감성을 표현했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup12.jpg" alt="베스킨라빈스 팝업">
-                            <div class="overlay"><div class="text"><h3>베스킨라빈스 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">아이스크림의 질감이 강조된 대형 오브제를 중앙에 배치하여 시각적 즐거움을 극대화하고, 브랜드 컬러인 핑크 톤의 배경과 귀여운 타이포그래피를 매치해 친근하고 달콤한 브랜드 이미지를 전달했습니다.</p></div></div>
-                        </div>
-                        <div class="popup-item" onclick="openModal(this)">
-                            <img src="./img/popup13.jpg" alt="나이키 에어포스 팝업">
-                            <div class="overlay"><div class="text"><h3>나이키 에어포스 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">일상적인 거리 배경과 인물의 발걸음을 포착한 스냅 사진을 활용해 제품의 활동성을 강조하고, 대담한 대형 타이포그래피를 전면에 배치하여 세련된 스트릿 감성과 브랜드의 아이덴티티를 명확하게 표현했습니다.</p></div></div>
-                        </div>
-                    </div>
-                </section>
-            
-                <section class="mo-cloud-section">
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup1.jpg" alt="럭키 드로우 팝업"><div class="text-data"><h3>럭키 드로우 팝업</h3><p>행운의 초록색과 입체적인 3D 오브젝트로 보상의 풍성함을 강조했으며, 시선이 제목에서 하단 버튼으로 자연스럽게 흐르도록 설계해 클릭을 유도했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup2.jpg" alt="가구 할인 팝업"><div class="text-data"><h3>가구 할인 팝업</h3><p>따뜻한 인테리어 배경에 파란색을 포인트 컬러로 사용해 신뢰감을 주었으며, 중앙의 굵은 타이포그래피로 특가 혜택을 강렬하게 강조했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup3.jpg" alt="던킨도넛&카카카오 이벤트 팝업"><div class="text-data"><h3>던킨도넛&카카카오 이벤트 팝업</h3><p>채도 높은 오렌지색 배경과 친숙한 캐릭터를 중앙에 배치해 주목도를 높였으며, 하단 영역을 노란색 바(Bar)로 분리하여 혜택 정보가 한눈에 들어오도록 설계했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup4.jpg" alt="항공권 쿠폰 팝업"><div class="text-data"><h3>항공권 쿠폰 팝업</h3><p>청량한 블루 톤과 3D 지구본 오브젝트로 여행의 설렘을 시각화했으며, 핵심 키워드와 위치 핀에 노란색을 사용해 혜택을 강조했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup5.jpg" alt="새해 세일 이벤트 팝업"><div class="text-data"><h3>새해 세일 이벤트 팝업</h3><p>하늘색 배경과 눈밭 위의 말 인형을 배치해 겨울 신년의 계절감을 감성적으로 연출했으며, 상단에 굵은 흰색 글씨를 써서 세일 메시지를 명확히 강조했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup6.jpg" alt="퍼스널컬러 전시 팝업"><div class="text-data"><h3>퍼스널컬러 전시 팝업</h3><p>네 가지 컬러의 역동적인 붓터치로 퍼스널 큐레이션의 전문성을 시각화하고, 간결한 타이포그래피와 대비되는 버튼 배치로 가독성과 사용자 참여를 높였습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup7.jpg" alt="새학기 온라인 강의 팝업"><div class="text-data"><h3>새학기 온라인 강의 팝업</h3><p>봄 시즌의 화사한 벚꽃 연출과 서비스 타겟을 직관적으로 보여주는 캐릭터 일러스트를 활용하여, 새 학기 프로모션의 주목도와 브랜드 친밀감을 높였습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup8.jpg" alt="CGV 출석체크 팝업"><div class="text-data"><h3>CGV 출석체크 팝업</h3><p>입체적인 제품 연출과 밤하늘의 조명 효과로 극장의 현장감을 극대화하고, 명도 대비를 활용한 타이포그래피로 프로모션의 주목도를 높였습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup9.jpg" alt="블랙프라이데이 팝업-1"><div class="text-data"><h3>블랙프라이데이 팝업-1</h3><p>블랙 배경에 블루 포인트 컬러를 매치하여 세련된 분위기를 연출하고, 대담한 타이포그래피와 입체적인 선물 상자 오브제를 활용해 블랙 프라이데이의 강렬한 인상과 구매 욕구를 자극했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup10.jpg" alt="블랙프라이데이 팝업-2"><div class="text-data"><h3>블랙프라이데이 팝업-2</h3><p>강렬한 레드와 블랙의 대비를 통해 브랜드의 역동성을 강조하고, 경고 테이프 모티프와 대담한 타이포그래피를 활용하여 블랙 프라이데이 특유의 긴박함과 압도적인 할인 혜택을 시각화했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup11.jpg" alt="크리스마스 팝업"><div class="text-data"><h3>크리스마스 팝업</h3><p>어두운 배경과 강렬한 레드 컬러의 대조를 활용해 시선을 집중시키고, 귀여운 3D 산타 캐릭터와 네온 효과를 더해 시즌 특유의 설렘과 트렌디한 감성을 표현했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup12.jpg" alt="베스킨라빈스 팝업"><div class="text-data"><h3>베스킨라빈스 팝업</h3><p>아이스크림의 질감이 강조된 대형 오브제를 중앙에 배치하여 시각적 즐거움을 극대화하고, 브랜드 컬러인 핑크 톤의 배경과 귀여운 타이포그래피를 매치해 친근하고 달콤한 브랜드 이미지를 전달했습니다.</p></div></div></div>
-                            <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup13.jpg" alt="나이키 에어포스 팝업"><div class="text-data"><h3>나이키 에어포스 팝업</h3><p>일상적인 거리 배경과 인물의 발걸음을 포착한 스냅 사진을 활용해 제품의 활동성을 강조하고, 대담한 대형 타이포그래피를 전면에 배치하여 세련된 스트릿 감성과 브랜드의 아이덴티티를 명확하게 표현했습니다.</p></div></div></div>
-                        </div>
-                        <div class="click-guide">
-                            <span class="arrow">↑</span>
-                            <span class="txt">CLICK</span>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
-    </div>
 
-    <!-- 포스터 -->
-    <div class="poster-bg design-wrapper">
-        <div class="common-frame">
-            <div id="section-poster">
-                <div class="center-container">
-                    <h4 class="noto-serif-kr text-oval-bg">Poster</h4>
+        <nav class="design-nav">
+            <button onclick="scrollToSection('section-popup')">POP UP</button>
+            <button onclick="scrollToSection('section-poster')">POSTER</button>
+            <button onclick="scrollToSection('section-banner')">BANNER</button>
+            <button onclick="scrollToSection('section-detail')">DETAIL</button>
+        </nav>
+
+
+        <!-- 팝업 -->
+        <div class="design-wrapper">
+            <div class="common-frame">
+                <div id="section-popup" class="design-content-section">
+                    <div class="center-container">
+                        <h4 class="noto-serif-kr text-oval-bg">Popup</h4>
+                    </div>
+                    <p>
+                        웹사이트에 들어온 사용자가 가장 먼저 마주하는 소중한 공간입니다. <br>
+                        복잡한 장식보다는 중요한 내용이 한눈에 들어올 수 있게 정돈하여, 이벤트나 공지사항을 기분 좋게 전달합니다.
+                    </p>
+                    <!-- 팝업 -->
+                    <section class="pc-cloud-section">
+                        <div class="pc-container">
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup1.jpg" alt="럭키드로우 팝업">
+                                <div class="overlay"><div class="text"><h3>럭키 드로우 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">행운의 초록색과 입체적인 3D 오브젝트로 보상의 풍성함을 강조했으며, 시선이 제목에서 하단 버튼으로 자연스럽게 흐르도록 설계해 클릭을 유도했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup2.jpg" alt="가구 할인 팝업">
+                                <div class="overlay"><div class="text"><h3>가구 할인 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">따뜻한 인테리어 배경에 파란색을 포인트 컬러로 사용해 신뢰감을 주었으며, 중앙의 굵은 타이포그래피로 특가 혜택을 강렬하게 강조했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup3.jpg" alt="던킨도넛&카카카오 이벤트 팝업">
+                                <div class="overlay"><div class="text"><h3>던킨도넛&카카오 이벤트 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">채도 높은 오렌지색 배경과 친숙한 캐릭터를 중앙에 배치해 주목도를 높였으며, 하단 영역을 노란색 바(Bar)로 분리하여 혜택 정보가 한눈에 들어오도록 설계했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup4.jpg" alt="항공권 쿠폰 팝업">
+                                <div class="overlay"><div class="text"><h3>항공권 쿠폰 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">청량한 블루 톤과 3D 지구본 오브젝트로 여행의 설렘을 시각화했으며, 핵심 키워드와 위치 핀에 노란색을 사용해 혜택을 강조했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup5.jpg" alt="새해 세일 이벤트 팝업">
+                                <div class="overlay"><div class="text"><h3>새해 세일 이벤트 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">하늘색 배경과 눈밭 위의 말 인형을 배치해 겨울 신년의 계절감을 감성적으로 연출했으며, 상단에 굵은 흰색 글씨를 써서 세일 메시지를 명확히 강조했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup6.jpg" alt="퍼스널컬러 전시 팝업디자인">
+                                <div class="overlay"><div class="text"><h3>퍼스널컬러 전시 팝업디자인</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">네 가지 컬러의 역동적인 붓터치로 퍼스널 큐레이션의 전문성을 시각화하고, 간결한 타이포그래피와 대비되는 버튼 배치로 가독성과 사용자 참여를 높였습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup7.jpg" alt="새학기 온라인 강의 팝업">
+                                <div class="overlay"><div class="text"><h3>새학기 온라인 강의 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">봄 시즌의 화사한 벚꽃 연출과 서비스 타겟을 직관적으로 보여주는 캐릭터 일러스트를 활용하여, 새 학기 프로모션의 주목도와 브랜드 친밀감을 높였습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup8.jpg" alt="CGV 출석체크 팝업">
+                                <div class="overlay"><div class="text"><h3>CGV 출석체크 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">입체적인 제품 연출과 밤하늘의 조명 효과로 극장의 현장감을 극대화하고, 명도 대비를 활용한 타이포그래피로 프로모션의 주목도를 높였습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup9.jpg" alt="블랙프라이데이 팝업-1">
+                                <div class="overlay"><div class="text"><h3>블랙프라이데이 팝업-1</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">블랙 배경에 블루 포인트 컬러를 매치하여 세련된 분위기를 연출하고, 대담한 타이포그래피와 입체적인 선물 상자 오브제를 활용해 블랙 프라이데이의 강렬한 인상과 구매 욕구를 자극했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup10.jpg" alt="블랙프라이데이 팝업-2">
+                                <div class="overlay"><div class="text"><h3>블랙프라이데이 팝업-2</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">강렬한 레드와 블랙의 대비를 통해 브랜드의 역동성을 강조하고, 경고 테이프 모티프와 대담한 타이포그래피를 활용하여 블랙 프라이데이 특유의 긴박함과 압도적인 할인 혜택을 시각화했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup11.jpg" alt="크리스마스 팝업">
+                                <div class="overlay"><div class="text"><h3>크리스마스 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">어두운 배경과 강렬한 레드 컬러의 대조를 활용해 시선을 집중시키고, 귀여운 3D 산타 캐릭터와 네온 효과를 더해 시즌 특유의 설렘과 트렌디한 감성을 표현했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup12.jpg" alt="베스킨라빈스 팝업">
+                                <div class="overlay"><div class="text"><h3>베스킨라빈스 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">아이스크림의 질감이 강조된 대형 오브제를 중앙에 배치하여 시각적 즐거움을 극대화하고, 브랜드 컬러인 핑크 톤의 배경과 귀여운 타이포그래피를 매치해 친근하고 달콤한 브랜드 이미지를 전달했습니다.</p></div></div>
+                            </div>
+                            <div class="popup-item" onclick="openModal(this)">
+                                <img src="./img/popup13.jpg" alt="나이키 에어포스 팝업">
+                                <div class="overlay"><div class="text"><h3>나이키 에어포스 팝업</h3><div class="view-more">자세히 보기 →</div><p class="hidden-desc">일상적인 거리 배경과 인물의 발걸음을 포착한 스냅 사진을 활용해 제품의 활동성을 강조하고, 대담한 대형 타이포그래피를 전면에 배치하여 세련된 스트릿 감성과 브랜드의 아이덴티티를 명확하게 표현했습니다.</p></div></div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section class="mo-cloud-section">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup1.jpg" alt="럭키 드로우 팝업"><div class="text-data"><h3>럭키 드로우 팝업</h3><p>행운의 초록색과 입체적인 3D 오브젝트로 보상의 풍성함을 강조했으며, 시선이 제목에서 하단 버튼으로 자연스럽게 흐르도록 설계해 클릭을 유도했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup2.jpg" alt="가구 할인 팝업"><div class="text-data"><h3>가구 할인 팝업</h3><p>따뜻한 인테리어 배경에 파란색을 포인트 컬러로 사용해 신뢰감을 주었으며, 중앙의 굵은 타이포그래피로 특가 혜택을 강렬하게 강조했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup3.jpg" alt="던킨도넛&카카카오 이벤트 팝업"><div class="text-data"><h3>던킨도넛&카카카오 이벤트 팝업</h3><p>채도 높은 오렌지색 배경과 친숙한 캐릭터를 중앙에 배치해 주목도를 높였으며, 하단 영역을 노란색 바(Bar)로 분리하여 혜택 정보가 한눈에 들어오도록 설계했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup4.jpg" alt="항공권 쿠폰 팝업"><div class="text-data"><h3>항공권 쿠폰 팝업</h3><p>청량한 블루 톤과 3D 지구본 오브젝트로 여행의 설렘을 시각화했으며, 핵심 키워드와 위치 핀에 노란색을 사용해 혜택을 강조했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup5.jpg" alt="새해 세일 이벤트 팝업"><div class="text-data"><h3>새해 세일 이벤트 팝업</h3><p>하늘색 배경과 눈밭 위의 말 인형을 배치해 겨울 신년의 계절감을 감성적으로 연출했으며, 상단에 굵은 흰색 글씨를 써서 세일 메시지를 명확히 강조했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup6.jpg" alt="퍼스널컬러 전시 팝업"><div class="text-data"><h3>퍼스널컬러 전시 팝업</h3><p>네 가지 컬러의 역동적인 붓터치로 퍼스널 큐레이션의 전문성을 시각화하고, 간결한 타이포그래피와 대비되는 버튼 배치로 가독성과 사용자 참여를 높였습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup7.jpg" alt="새학기 온라인 강의 팝업"><div class="text-data"><h3>새학기 온라인 강의 팝업</h3><p>봄 시즌의 화사한 벚꽃 연출과 서비스 타겟을 직관적으로 보여주는 캐릭터 일러스트를 활용하여, 새 학기 프로모션의 주목도와 브랜드 친밀감을 높였습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup8.jpg" alt="CGV 출석체크 팝업"><div class="text-data"><h3>CGV 출석체크 팝업</h3><p>입체적인 제품 연출과 밤하늘의 조명 효과로 극장의 현장감을 극대화하고, 명도 대비를 활용한 타이포그래피로 프로모션의 주목도를 높였습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup9.jpg" alt="블랙프라이데이 팝업-1"><div class="text-data"><h3>블랙프라이데이 팝업-1</h3><p>블랙 배경에 블루 포인트 컬러를 매치하여 세련된 분위기를 연출하고, 대담한 타이포그래피와 입체적인 선물 상자 오브제를 활용해 블랙 프라이데이의 강렬한 인상과 구매 욕구를 자극했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup10.jpg" alt="블랙프라이데이 팝업-2"><div class="text-data"><h3>블랙프라이데이 팝업-2</h3><p>강렬한 레드와 블랙의 대비를 통해 브랜드의 역동성을 강조하고, 경고 테이프 모티프와 대담한 타이포그래피를 활용하여 블랙 프라이데이 특유의 긴박함과 압도적인 할인 혜택을 시각화했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup11.jpg" alt="크리스마스 팝업"><div class="text-data"><h3>크리스마스 팝업</h3><p>어두운 배경과 강렬한 레드 컬러의 대조를 활용해 시선을 집중시키고, 귀여운 3D 산타 캐릭터와 네온 효과를 더해 시즌 특유의 설렘과 트렌디한 감성을 표현했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup12.jpg" alt="베스킨라빈스 팝업"><div class="text-data"><h3>베스킨라빈스 팝업</h3><p>아이스크림의 질감이 강조된 대형 오브제를 중앙에 배치하여 시각적 즐거움을 극대화하고, 브랜드 컬러인 핑크 톤의 배경과 귀여운 타이포그래피를 매치해 친근하고 달콤한 브랜드 이미지를 전달했습니다.</p></div></div></div>
+                                <div class="swiper-slide"><div class="popup-item" onclick="openModal(this)"><img src="./img/popup13.jpg" alt="나이키 에어포스 팝업"><div class="text-data"><h3>나이키 에어포스 팝업</h3><p>일상적인 거리 배경과 인물의 발걸음을 포착한 스냅 사진을 활용해 제품의 활동성을 강조하고, 대담한 대형 타이포그래피를 전면에 배치하여 세련된 스트릿 감성과 브랜드의 아이덴티티를 명확하게 표현했습니다.</p></div></div></div>
+                            </div>
+                            <div class="click-guide">
+                                <span class="arrow">↑</span>
+                                <span class="txt">CLICK</span>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <p>
-                    정돈된 질서를 바탕으로 정보의 중요도를 나누어 설계합니다. <br>
-                    많은 정보 속에서도 무엇이 제일 중요한지 사용자가 바로 알 수 있도록, 탄탄한 기본기를 바탕으로 시각적인 즐거움을 줍니다.
-                </p>
+            </div>
+        </div>
     
-                <div class="poster-swiper-outer">
-                    <div class="swiper posterSwiper">
+        <!-- 포스터 -->
+        <div class="poster-bg design-wrapper">
+            <div class="common-frame">
+                <div id="section-poster">
+                    <div class="center-container">
+                        <h4 class="noto-serif-kr text-oval-bg">Poster</h4>
+                    </div>
+                    <p>
+                        정돈된 질서를 바탕으로 정보의 중요도를 나누어 설계합니다. <br>
+                        많은 정보 속에서도 무엇이 제일 중요한지 사용자가 바로 알 수 있도록, 탄탄한 기본기를 바탕으로 시각적인 즐거움을 줍니다.
+                    </p>
+        
+                    <div class="poster-swiper-outer">
+                        <div class="swiper posterSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster1.jpg" alt="자동차 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>자동차 광고 포스터</h3>
+                                            <p>네온 조명의 대비와 낮은 구도를 통해 차량의 역동성을 강조하고, 굵은 타이포그래피로 터보 모델의 강력한 존재감을 직관적으로 표현한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster2.jpg" alt="아이웨어 브랜드 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>아이웨어 브랜드 포스터</h3>
+                                            <p>무채색 배경에 액체 형태의 반사 오브제를 활용하여 제품의 세련된 곡선을 강조하고, 클래식한 서체를 배치해 정제된 브랜드 이미지를 완성한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster3.jpg" alt="영화 홍보 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>영화 홍보 포스터</h3>
+                                            <p>짙은 안개와 거대한 괴물의 실루엣으로 영화의 핵심 공포를 직관적으로 전달하고, 긴 설명을 한 줄의 짧고 강렬한 문구로 압축해 시선을 사로잡는 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster4.jpg" alt="화장품 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>화장품 광고 포스터</h3>
+                                            <p>화사한 봄날의 풍경과 비눗방울 요소를 활용해 제품의 산뜻함을 부각하고, 제품 특징을 가리키는 직관적인 레이아웃으로 맑고 생기 넘치는 이미지를 연출한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster5.jpg" alt="주류 브랜드 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>주류 브랜드 광고 포스터</h3>
+                                            <p>따뜻한 벽난로와 보케 배경으로 아늑한 분위기를 조성하고, 얼음이 든 위스키 잔의 정교한 클로즈업과 대담한 타이포그래피로 브랜드의 전통과 가치를 강조한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster6.jpg" alt="푸드 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>푸드 광고 포스터</h3>
+                                            <p>강렬한 레드와 옐로우의 대비로 식욕을 자극하고, 배경을 가득 채운 대담한 타이포그래피와 사실적인 버거 이미지를 중첩시켜 제품의 존재감을 역동적으로 부각한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster7.jpg" alt="환경 보호 공익 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>환경 보호 공익 광고 포스터</h3>
+                                            <p>빙하 구멍 속에 갇힌 물개와 해양 쓰레기를 대비시켜 환경 오염의 심각성을 감성적으로 전달하고, 상단의 굵은 메시지로 시각적 임팩트를 더한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster8.jpg" alt="아이돌 컴백 홍보 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>아이돌 컴백 홍보 포스터</h3>
+                                            <p>아날로그 필름의 거친 질감과 빈티지한 색감을 살려 90년대 노스텔지어를 재해석하고, 상단의 강렬한 그래픽 폰트로 그룹 특유의 힙하고 자유로운 분위기를 완성한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster9.jpg" alt="음악회 홍보 포스터 디자인"></div>
+                                        <div class="card-text-box">
+                                            <h3>음악회 홍보 포스터 디자인</h3>
+                                            <p>거대한 보름달과 바다 위 피아노라는 초현실적인 배치를 통해 몽환적인 분위기를 조성하고, 우아한 곡선의 필기체를 사용해 클래식 공연의 서정적인 감성을 시각화한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster10.jpg" alt="수분 크림 광고 포스터 디자인"></div>
+                                        <div class="card-text-box">
+                                            <h3>수분 크림 광고 포스터 디자인</h3>
+                                            <p>맑은 물의 질감과 내리쬐는 빛의 연출로 강력한 수분감을 강조하고, 중앙 집중형 구도와 대칭 반사를 통해 제품의 신뢰도와 청량함을 극대화한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster11.jpg" alt="커피 브랜드 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>커피 브랜드 광고 포스터</h3>
+                                            <p>여백의 미를 살린 미니멀한 구성에 강렬한 대비의 자연광을 활용하여 커피 한 잔의 고요함과 깊은 풍미를 감각적으로 표현한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="poster-card">
+                                        <div class="card-img-box"><img src="./img/poster12.jpg" alt="베이커리 카페 광고 포스터"></div>
+                                        <div class="card-text-box">
+                                            <h3>베이커리 카페 광고 포스터</h3>
+                                            <p>부드러운 베이지 배경에 시럽이 흘러내리는 듯한 위트 있는 타이포그래피를 조화시켜, 크루아상의 달콤한 질감과 따뜻한 풍미를 감각적으로 극대화한 디자인입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 배너 -->
+        <div class="banner-bg design-wrapper">
+            <div class="common-frame">
+                <div id="section-banner">
+                    <div class="center-container">
+                        <h4 class="noto-serif-kr text-oval-bg">Banner</h4>
+                    </div>
+                    <p>
+                        다양한 화면 크기 속에서 브랜드의 색깔을 가장 잘 보여주는 얼굴입니다. <br>짧은 순간에도 메시지가 명확하게 읽히도록 중심을 잡고, 사용자가 자연스럽게 클릭하고 싶어지는 매력적인 화면을 만듭니다.
+                    </p>
+                    <div class="swiper bannerSwiper">
                         <div class="swiper-wrapper">
+    
                             <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster1.jpg" alt="자동차 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>자동차 광고 포스터</h3>
-                                        <p>네온 조명의 대비와 낮은 구도를 통해 차량의 역동성을 강조하고, 굵은 타이포그래피로 터보 모델의 강력한 존재감을 직관적으로 표현한 디자인입니다.</p>
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner1.jpg" alt="아이폰 17pro 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">01</span>
+                                        <h3>아이폰 17pro 배너</h3>
+                                        <p>블랙 배경 위 푸른 광원과 테크니컬 라인을 배치해 미래적인 분위기를 강조했으며, 강렬한 색 대비와 정교한 실루엣으로 현대적이고 깔끔한 느낌을 연출했습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster2.jpg" alt="아이웨어 브랜드 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>아이웨어 브랜드 포스터</h3>
-                                        <p>무채색 배경에 액체 형태의 반사 오브제를 활용하여 제품의 세련된 곡선을 강조하고, 클래식한 서체를 배치해 정제된 브랜드 이미지를 완성한 디자인입니다.</p>
+    
+                            <div class="swiper-slide reverse-layout">
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner2.jpg" alt="ADER ERROR 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">02</span>
+                                        <h3>ADER ERROR 배너</h3>
+                                        <p>아더에러의 시그니처 컬러인 블루를 중심으로 미세한 입자감과 아날로그적인 노이즈 효과를 적용하여, 브랜드 고유의 '편집(RE-EDIT)'이라는 개념을 시각적으로 구현했습니다.</p>
                                     </div>
                                 </div>
                             </div>
+    
                             <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster3.jpg" alt="영화 홍보 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>영화 홍보 포스터</h3>
-                                        <p>짙은 안개와 거대한 괴물의 실루엣으로 영화의 핵심 공포를 직관적으로 전달하고, 긴 설명을 한 줄의 짧고 강렬한 문구로 압축해 시선을 사로잡는 디자인입니다.</p>
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner3.jpg" alt="일본 여행 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">03</span>
+                                        <h3>일본 여행 배너</h3>
+                                        <p>선명한 푸른 하늘과 초록빛 풀밭의 싱그러운 색감 조화를 통해, 청량하고 깨끗한 일본 여름 여행의 이미지를 시각적으로 담았습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster4.jpg" alt="화장품 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>화장품 광고 포스터</h3>
-                                        <p>화사한 봄날의 풍경과 비눗방울 요소를 활용해 제품의 산뜻함을 부각하고, 제품 특징을 가리키는 직관적인 레이아웃으로 맑고 생기 넘치는 이미지를 연출한 디자인입니다.</p>
+    
+                            <div class="swiper-slide reverse-layout">
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner4.jpg" alt="도서 홍보 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">04</span>
+                                        <h3>도서 홍보 배너</h3>
+                                        <p>따뜻한 질감의 미색 배경 위에 깔끔한 타이포그래피와 도서 입체 이미지를 배치하여, 에세이가 주는 편안하고 서정적인 위로의 분위기를 감성적으로 전달했습니다.</p>
                                     </div>
                                 </div>
                             </div>
+    
                             <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster5.jpg" alt="주류 브랜드 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>주류 브랜드 광고 포스터</h3>
-                                        <p>따뜻한 벽난로와 보케 배경으로 아늑한 분위기를 조성하고, 얼음이 든 위스키 잔의 정교한 클로즈업과 대담한 타이포그래피로 브랜드의 전통과 가치를 강조한 디자인입니다.</p>
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner5.jpg" alt="향수 홍보 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">05</span>
+                                        <h3>향수 홍보 배너</h3>
+                                        <p>우아한 골드 톤의 그라데이션 배경과 은은하게 퍼지는 빛 입자 효과를 더해 향수의 고급스러운 이미지와 영원한 아름다움의 가치를 시각적으로 극대화했습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster6.jpg" alt="푸드 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>푸드 광고 포스터</h3>
-                                        <p>강렬한 레드와 옐로우의 대비로 식욕을 자극하고, 배경을 가득 채운 대담한 타이포그래피와 사실적인 버거 이미지를 중첩시켜 제품의 존재감을 역동적으로 부각한 디자인입니다.</p>
+    
+                            <div class="swiper-slide reverse-layout">
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner6.jpg" alt="지브리 전시 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">06</span>
+                                        <h3>지브리 전시 배너</h3>
+                                        <p>수채화 톤의 따뜻한 숲속 일러스트와 종이 질감을 살린 배경을 조화롭게 배치하여 지브리 특유의 감성적인 분위기와 동화 같은 따스함을 시각적으로 연출했습니다.</p>
                                     </div>
                                 </div>
                             </div>
+    
                             <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster7.jpg" alt="환경 보호 공익 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>환경 보호 공익 광고 포스터</h3>
-                                        <p>빙하 구멍 속에 갇힌 물개와 해양 쓰레기를 대비시켜 환경 오염의 심각성을 감성적으로 전달하고, 상단의 굵은 메시지로 시각적 임팩트를 더한 디자인입니다.</p>
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner7.jpg" alt="아디다스 신발 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">07</span>
+                                        <h3>아디다스 신발 배너</h3>
+                                        <p>깨끗한 화이트 톤 배경에 제품의 질감이 느껴지는 텍스처를 더하고 볼드한 타이포그래피를 중앙에 배치하여 브랜드의 오리지널리티와 현대적인 미니멀리즘을 동시에 강조했습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster8.jpg" alt="아이돌 컴백 홍보 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>아이돌 컴백 홍보 포스터</h3>
-                                        <p>아날로그 필름의 거친 질감과 빈티지한 색감을 살려 90년대 노스텔지어를 재해석하고, 상단의 강렬한 그래픽 폰트로 그룹 특유의 힙하고 자유로운 분위기를 완성한 디자인입니다.</p>
+    
+                            <div class="swiper-slide reverse-layout">
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner8.jpg" alt="자몽 에이드 음료 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">08</span>
+                                        <h3>자몽 에이드 음료 배너</h3>
+                                        <p>생동감 넘치는 오렌지 배경 위로 솟구치는 물방울과 흩날리는 잎사귀를 배치하여 제품의 신선함과 탄산의 청량함을 역동적인 비주얼로 표현했습니다.</p>
                                     </div>
                                 </div>
                             </div>
+    
                             <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster9.jpg" alt="음악회 홍보 포스터 디자인"></div>
-                                    <div class="card-text-box">
-                                        <h3>음악회 홍보 포스터 디자인</h3>
-                                        <p>거대한 보름달과 바다 위 피아노라는 초현실적인 배치를 통해 몽환적인 분위기를 조성하고, 우아한 곡선의 필기체를 사용해 클래식 공연의 서정적인 감성을 시각화한 디자인입니다.</p>
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner9.jpg" alt="설맞이 선물세트 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">09</span>
+                                        <h3>설맞이 보리굴비 선물세트 배너</h3>
+                                        <p>단아한 베이지 톤 배경에 전통 문양 노리개와 정갈한 제품 배치를 더해 명절 선물세트다운 격조와 신뢰감을 주는 전통적인 디자인을 완성했습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster10.jpg" alt="수분 크림 광고 포스터 디자인"></div>
-                                    <div class="card-text-box">
-                                        <h3>수분 크림 광고 포스터 디자인</h3>
-                                        <p>맑은 물의 질감과 내리쬐는 빛의 연출로 강력한 수분감을 강조하고, 중앙 집중형 구도와 대칭 반사를 통해 제품의 신뢰도와 청량함을 극대화한 디자인입니다.</p>
+    
+                            <div class="swiper-slide reverse-layout">
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner10.jpg" alt="블랙 프라이데이 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">10</span>
+                                        <h3>블랙 프라이데이 배너</h3>
+                                        <p>블랙과 레드의 강렬한 대비를 활용한 볼드 타이포그래피를 중앙에 배치하고 쇼핑백과 선물 상자 오브제를 입체적으로 구성하여 역동적이고 긴박한 세일 축제 분위기를 극대화했습니다.</p>
                                     </div>
                                 </div>
                             </div>
+    
                             <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster11.jpg" alt="커피 브랜드 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>커피 브랜드 광고 포스터</h3>
-                                        <p>여백의 미를 살린 미니멀한 구성에 강렬한 대비의 자연광을 활용하여 커피 한 잔의 고요함과 깊은 풍미를 감각적으로 표현한 디자인입니다.</p>
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner11.jpg" alt="화장품 홍보 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">11</span>
+                                        <h3>화장품 홍보 배너</h3>
+                                        <p>부드러운 베이지 배경에 신선한 과일 슬라이스와 잎사귀 오브제를 배치하여 비타민 성분의 생동감을 강조했으며, 제품 주위에 여유로운 공간을 두어 깨끗하고 자연스러운 분위기를 연출했습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="poster-card">
-                                    <div class="card-img-box"><img src="./img/poster12.jpg" alt="베이커리 카페 광고 포스터"></div>
-                                    <div class="card-text-box">
-                                        <h3>베이커리 카페 광고 포스터</h3>
-                                        <p>부드러운 베이지 배경에 시럽이 흘러내리는 듯한 위트 있는 타이포그래피를 조화시켜, 크루아상의 달콤한 질감과 따뜻한 풍미를 감각적으로 극대화한 디자인입니다.</p>
+    
+                            <div class="swiper-slide reverse-layout">
+                                <div class="banner-item">
+                                    <div class="banner-img-box">
+                                        <img src="./img/banner12.jpg" alt="크리스마스 시즌 배너">
+                                    </div>
+                                    <div class="banner-text-box">
+                                        <span class="num">12</span>
+                                        <h3>크리스마스 시즌 배너</h3>
+                                        <p>따뜻한 베이지 톤의 빈티지 종이 질감 배경에 입체적인 별 오브제와 리스를 배치하여 연말의 아늑하고 설레는 분위기를 클래식하게 표현했습니다.</p>
                                     </div>
                                 </div>
                             </div>
-                           
-                        </div>
+                            
+                            </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- 배너 -->
-    <div class="banner-bg design-wrapper">
-        <div class="common-frame">
-            <div id="section-bannner">
-                <div class="center-container">
-                    <h4 class="noto-serif-kr text-oval-bg">Banner</h4>
-                </div>
-                <p>
-                    다양한 화면 크기 속에서 브랜드의 색깔을 가장 잘 보여주는 얼굴입니다. <br>짧은 순간에도 메시지가 명확하게 읽히도록 중심을 잡고, 사용자가 자연스럽게 클릭하고 싶어지는 매력적인 화면을 만듭니다.
-                </p>
-                <div class="swiper bannerSwiper">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner1.jpg" alt="아이폰 17pro 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">01</span>
-                                    <h3>아이폰 17pro 배너</h3>
-                                    <p>블랙 배경 위 푸른 광원과 테크니컬 라인을 배치해 미래적인 분위기를 강조했으며, 강렬한 색 대비와 정교한 실루엣으로 현대적이고 깔끔한 느낌을 연출했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner2.jpg" alt="ADER ERROR 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">02</span>
-                                    <h3>ADER ERROR 배너</h3>
-                                    <p>아더에러의 시그니처 컬러인 블루를 중심으로 미세한 입자감과 아날로그적인 노이즈 효과를 적용하여, 브랜드 고유의 '편집(RE-EDIT)'이라는 개념을 시각적으로 구현했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner3.jpg" alt="일본 여행 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">03</span>
-                                    <h3>일본 여행 배너</h3>
-                                    <p>선명한 푸른 하늘과 초록빛 풀밭의 싱그러운 색감 조화를 통해, 청량하고 깨끗한 일본 여름 여행의 이미지를 시각적으로 담았습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner4.jpg" alt="도서 홍보 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">04</span>
-                                    <h3>도서 홍보 배너</h3>
-                                    <p>따뜻한 질감의 미색 배경 위에 깔끔한 타이포그래피와 도서 입체 이미지를 배치하여, 에세이가 주는 편안하고 서정적인 위로의 분위기를 감성적으로 전달했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner5.jpg" alt="향수 홍보 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">05</span>
-                                    <h3>향수 홍보 배너</h3>
-                                    <p>우아한 골드 톤의 그라데이션 배경과 은은하게 퍼지는 빛 입자 효과를 더해 향수의 고급스러운 이미지와 영원한 아름다움의 가치를 시각적으로 극대화했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner6.jpg" alt="지브리 전시 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">06</span>
-                                    <h3>지브리 전시 배너</h3>
-                                    <p>수채화 톤의 따뜻한 숲속 일러스트와 종이 질감을 살린 배경을 조화롭게 배치하여 지브리 특유의 감성적인 분위기와 동화 같은 따스함을 시각적으로 연출했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner7.jpg" alt="아디다스 신발 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">07</span>
-                                    <h3>아디다스 신발 배너</h3>
-                                    <p>깨끗한 화이트 톤 배경에 제품의 질감이 느껴지는 텍스처를 더하고 볼드한 타이포그래피를 중앙에 배치하여 브랜드의 오리지널리티와 현대적인 미니멀리즘을 동시에 강조했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner8.jpg" alt="자몽 에이드 음료 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">08</span>
-                                    <h3>자몽 에이드 음료 배너</h3>
-                                    <p>생동감 넘치는 오렌지 배경 위로 솟구치는 물방울과 흩날리는 잎사귀를 배치하여 제품의 신선함과 탄산의 청량함을 역동적인 비주얼로 표현했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner9.jpg" alt="설맞이 선물세트 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">09</span>
-                                    <h3>설맞이 보리굴비 선물세트 배너</h3>
-                                    <p>단아한 베이지 톤 배경에 전통 문양 노리개와 정갈한 제품 배치를 더해 명절 선물세트다운 격조와 신뢰감을 주는 전통적인 디자인을 완성했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner10.jpg" alt="블랙 프라이데이 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">10</span>
-                                    <h3>블랙 프라이데이 배너</h3>
-                                    <p>블랙과 레드의 강렬한 대비를 활용한 볼드 타이포그래피를 중앙에 배치하고 쇼핑백과 선물 상자 오브제를 입체적으로 구성하여 역동적이고 긴박한 세일 축제 분위기를 극대화했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner11.jpg" alt="화장품 홍보 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">11</span>
-                                    <h3>화장품 홍보 배너</h3>
-                                    <p>부드러운 베이지 배경에 신선한 과일 슬라이스와 잎사귀 오브제를 배치하여 비타민 성분의 생동감을 강조했으며, 제품 주위에 여유로운 공간을 두어 깨끗하고 자연스러운 분위기를 연출했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="banner-item">
-                                <div class="banner-img-box">
-                                    <img src="./img/banner12.jpg" alt="크리스마스 시즌 배너">
-                                </div>
-                                <div class="banner-text-box">
-                                    <span class="num">12</span>
-                                    <h3>크리스마스 시즌 배너</h3>
-                                    <p>따뜻한 베이지 톤의 빈티지 종이 질감 배경에 입체적인 별 오브제와 리스를 배치하여 연말의 아늑하고 설레는 분위기를 클래식하게 표현했습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 상세페이지 -->
-    <div class="detail-bg design-wrapper">
-        <div class="common-frame">
-            <div id="section-detail">
-                <div class="center-container">
-                    <h4 class="noto-serif-kr text-oval-bg">Product Detail Page</h4>
-                </div>
-                <p>
-                    제품이나 서비스의 장점을 사용자의 눈높이에 맞춰 차근차근 설명합니다. <br>
-                    궁금한 점을 미리 해결해 주는 친절한 흐름을 설계하여, 사용자가 안심하고 선택할 수 있도록 믿음직한 디자인을 완성합니다.
-                </p>
-
-                <div class="detail-grid">
-                    <div class="detail-item" onclick="openDetailModal('./img/detail1.jpg', '향수 상세페이지', '차분한 베이지와 무채색 톤의 감성적인 화보를 중심으로 여백의 미를 극대화한 레이아웃을 설계하여 브랜드 특유의 서정적인 무드를 시각화했습니다.<br><br>제품의 원재료와 향의 디테일을 한 편의 이야기처럼 흐름 있게 배치하여 사용자가 브랜드의 고급스러운 가치를 자연스럽게 경험할 수 있도록 구현했습니다.')">
-                        <div class="detail-thumb">
-                            <img src="./img/detail1.jpg" alt="향수 상세페이지">
-                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
-                        </div>
-                        <h3 class="detail-title">향수 상세페이지</h3>
-                        <p class="detail-more-text">자세히보기</p>
+    
+        <!-- 상세페이지 -->
+        <div class="detail-bg design-wrapper">
+            <div class="common-frame">
+                <div id="section-detail">
+                    <div class="center-container">
+                        <h4 class="noto-serif-kr text-oval-bg">Product Detail Page</h4>
                     </div>
-
-                    <div class="detail-item" onclick="openDetailModal('./img/detail2.jpg', '의자 상세페이지', '밝고 깨끗한 화이트 톤의 라이프스타일 화보를 메인으로 활용하여 제품이 실제 주거 공간에 자연스럽게 어우러지는 실용적인 미학을 시각화했습니다.<br><br>의자의 핵심 기능과 소재 정보를 직관적인 아이콘과 레이아웃으로 설계하여 사용자가 제품의 기술적 장점을 한눈에 파악하고 신뢰를 가질 수 있도록 구현했습니다.')">
-                        <div class="detail-thumb">
-                            <img src="./img/detail2.jpg" alt="의자 상세페이지">
-                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                    <p>
+                        제품이나 서비스의 장점을 사용자의 눈높이에 맞춰 차근차근 설명합니다. <br>
+                        궁금한 점을 미리 해결해 주는 친절한 흐름을 설계하여, 사용자가 안심하고 선택할 수 있도록 믿음직한 디자인을 완성합니다.
+                    </p>
+    
+                    <div class="detail-grid">
+                        <div class="detail-item" onclick="openDetailModal('./img/detail1.jpg', '향수 상세페이지', '차분한 베이지와 무채색 톤의 감성적인 화보를 중심으로 여백의 미를 극대화한 레이아웃을 설계하여 브랜드 특유의 서정적인 무드를 시각화했습니다.<br><br>제품의 원재료와 향의 디테일을 한 편의 이야기처럼 흐름 있게 배치하여 사용자가 브랜드의 고급스러운 가치를 자연스럽게 경험할 수 있도록 구현했습니다.')">
+                            <div class="detail-thumb">
+                                <img src="./img/detail1.jpg" alt="향수 상세페이지">
+                                <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                            </div>
+                            <h3 class="detail-title">향수 상세페이지</h3>
+                            <p class="detail-more-text">자세히보기</p>
                         </div>
-                        <h3 class="detail-title">의자 상세페이지</h3>
-                        <p class="detail-more-text">자세히보기</p>
-                    </div>
-
-                    <div class="detail-item" onclick="openDetailModal('./img/detail3.jpg', '와인 상세페이지', '화사한 핑크 톤의 색감과 흩날리는 벚꽃 오브제를 메인 비주얼로 활용하여 봄의 정취와 제품 특유의 낭만적인 분위기를 감성적으로 극대화했습니다.<br><br>와인의 맛과 향을 시각화한 잡지 스타일의 레이아웃과 정갈한 선물 세트 구성 이미지를 조화롭게 배치하여 제품의 심미적 가치와 특별함을 효과적으로 전달했습니다.')">
-                        <div class="detail-thumb">
-                            <img src="./img/detail3.jpg" alt="와인 상세페이지">
-                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+    
+                        <div class="detail-item" onclick="openDetailModal('./img/detail2.jpg', '의자 상세페이지', '밝고 깨끗한 화이트 톤의 라이프스타일 화보를 메인으로 활용하여 제품이 실제 주거 공간에 자연스럽게 어우러지는 실용적인 미학을 시각화했습니다.<br><br>의자의 핵심 기능과 소재 정보를 직관적인 아이콘과 레이아웃으로 설계하여 사용자가 제품의 기술적 장점을 한눈에 파악하고 신뢰를 가질 수 있도록 구현했습니다.')">
+                            <div class="detail-thumb">
+                                <img src="./img/detail2.jpg" alt="의자 상세페이지">
+                                <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                            </div>
+                            <h3 class="detail-title">의자 상세페이지</h3>
+                            <p class="detail-more-text">자세히보기</p>
                         </div>
-                        <h3 class="detail-title">와인 상세페이지</h3>
-                        <p class="detail-more-text">자세히보기</p>
-                    </div>
-
-                    <div class="detail-item" onclick="openDetailModal('./img/detail4.jpg', '화장품 앰플 상세페이지', '생동감 넘치는 옐로우와 그린 톤을 메인 컬러로 사용하여 제품의 핵심 성분인 비타민과 알로에의 신선한 에너지를 시각적으로 명확하게 전달했습니다.<br><br>사용 전후의 비교 수치와 피부 흡수 과정을 직관적인 그래픽으로 설계하여 제품의 기능적 신뢰도를 높이고 사용자가 기대 효과를 쉽게 이해할 수 있도록 구현했습니다.')">
-                        <div class="detail-thumb">
-                            <img src="./img/detail4.jpg" alt="화장품 앰플 상세페이지">
-                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+    
+                        <div class="detail-item" onclick="openDetailModal('./img/detail3.jpg', '와인 상세페이지', '화사한 핑크 톤의 색감과 흩날리는 벚꽃 오브제를 메인 비주얼로 활용하여 봄의 정취와 제품 특유의 낭만적인 분위기를 감성적으로 극대화했습니다.<br><br>와인의 맛과 향을 시각화한 잡지 스타일의 레이아웃과 정갈한 선물 세트 구성 이미지를 조화롭게 배치하여 제품의 심미적 가치와 특별함을 효과적으로 전달했습니다.')">
+                            <div class="detail-thumb">
+                                <img src="./img/detail3.jpg" alt="와인 상세페이지">
+                                <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                            </div>
+                            <h3 class="detail-title">와인 상세페이지</h3>
+                            <p class="detail-more-text">자세히보기</p>
                         </div>
-                        <h3 class="detail-title">화장품 앰플 상세페이지</h3>
-                        <p class="detail-more-text">자세히보기</p>
-                    </div>
-
-                    <div class="detail-item" onclick="openDetailModal('./img/detail5.jpg', '프리미엄 반려견 사료 상세페이지', '따뜻하고 부드러운 베이지 톤의 배경과 함께 실제 사료를 먹는 반려견들의 행복한 모습을 메인 비주얼로 활용하여 제품의 기호성과 친근함을 시각화했습니다.<br><br>원재료의 신선함과 영양 성분을 아이콘과 깔끔한 레이아웃으로 정리하여 정보의 가독성을 높였으며 브랜드가 추구하는 건강하고 정직한 가치를 신뢰감 있게 표현했습니다.')">
-                        <div class="detail-thumb">
-                            <img src="./img/detail5.jpg" alt="프리미엄 반려견 사료 상세페이지">
-                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+    
+                        <div class="detail-item" onclick="openDetailModal('./img/detail4.jpg', '화장품 앰플 상세페이지', '생동감 넘치는 옐로우와 그린 톤을 메인 컬러로 사용하여 제품의 핵심 성분인 비타민과 알로에의 신선한 에너지를 시각적으로 명확하게 전달했습니다.<br><br>사용 전후의 비교 수치와 피부 흡수 과정을 직관적인 그래픽으로 설계하여 제품의 기능적 신뢰도를 높이고 사용자가 기대 효과를 쉽게 이해할 수 있도록 구현했습니다.')">
+                            <div class="detail-thumb">
+                                <img src="./img/detail4.jpg" alt="화장품 앰플 상세페이지">
+                                <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                            </div>
+                            <h3 class="detail-title">화장품 앰플 상세페이지</h3>
+                            <p class="detail-more-text">자세히보기</p>
                         </div>
-                        <h3 class="detail-title">프리미엄 반려견 사료 상세페이지</h3>
-                        <p class="detail-more-text">자세히보기</p>
-                    </div>
-
-                    <div class="detail-item" onclick="openDetailModal('./img/detail6.jpg', '헤드셋 상세페이지', '세련된 블루와 화이트 컬러 대비를 활용한 미니멀한 배경에 역동적인 인물 화보를 배치하여 제품의 현대적인 디자인과 몰입감 넘치는 사운드 경험을 시각화했습니다.<br><br>노이즈 캔슬링의 기술적 수치와 제품의 세부 디테일을 직관적인 그래픽으로 설계하여 고기능성 스마트 기기로서의 전문성과 제품에 대한 신뢰감을 동시에 확보했습니다.')">
-                        <div class="detail-thumb">
-                            <img src="./img/detail6.jpg" alt="헤드셋 상세페이지">
-                            <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+    
+                        <div class="detail-item" onclick="openDetailModal('./img/detail5.jpg', '프리미엄 반려견 사료 상세페이지', '따뜻하고 부드러운 베이지 톤의 배경과 함께 실제 사료를 먹는 반려견들의 행복한 모습을 메인 비주얼로 활용하여 제품의 기호성과 친근함을 시각화했습니다.<br><br>원재료의 신선함과 영양 성분을 아이콘과 깔끔한 레이아웃으로 정리하여 정보의 가독성을 높였으며 브랜드가 추구하는 건강하고 정직한 가치를 신뢰감 있게 표현했습니다.')">
+                            <div class="detail-thumb">
+                                <img src="./img/detail5.jpg" alt="프리미엄 반려견 사료 상세페이지">
+                                <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                            </div>
+                            <h3 class="detail-title">프리미엄 반려견 사료 상세페이지</h3>
+                            <p class="detail-more-text">자세히보기</p>
                         </div>
-                        <h3 class="detail-title">헤드셋 상세페이지</h3>
-                        <p class="detail-more-text">자세히보기</p>
+    
+                        <div class="detail-item" onclick="openDetailModal('./img/detail6.jpg', '헤드셋 상세페이지', '세련된 블루와 화이트 컬러 대비를 활용한 미니멀한 배경에 역동적인 인물 화보를 배치하여 제품의 현대적인 디자인과 몰입감 넘치는 사운드 경험을 시각화했습니다.<br><br>노이즈 캔슬링의 기술적 수치와 제품의 세부 디테일을 직관적인 그래픽으로 설계하여 고기능성 스마트 기기로서의 전문성과 제품에 대한 신뢰감을 동시에 확보했습니다.')">
+                            <div class="detail-thumb">
+                                <img src="./img/detail6.jpg" alt="헤드셋 상세페이지">
+                                <div class="detail-hover-overlay">상세페이지 <br>전체보기</div>
+                            </div>
+                            <h3 class="detail-title">헤드셋 상세페이지</h3>
+                            <p class="detail-more-text">자세히보기</p>
+                        </div>
                     </div>
                 </div>
             </div>

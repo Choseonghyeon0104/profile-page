@@ -37,7 +37,7 @@ function closeDetailModal() {
     document.getElementById("detailModalTitle").innerText = "";
     document.getElementById("detailModalDesc").innerText = "";
 
-    document.body.style.overflowY = "auto";
+    document.body.style.overflowY = "";
 }
 
 window.addEventListener("keydown", (e) => {
