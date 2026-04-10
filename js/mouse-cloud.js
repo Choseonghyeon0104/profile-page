@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
             this.x = x;
             this.y = y;
             // 입자 크기를 넉넉하게 잡아서 주변부로 넓게 퍼지게 함
-            this.size = Math.random() * 50 + 40; 
+            this.size = Math.random() * 120 + 40; 
             
             // 아주 연하게 잔상이 남도록 시작 투명도를 낮춤
             this.opacity = 0.5; 
@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
             this.size += 1.2; // 링이 점점 커지면서 흩어짐
 
             // 사라지는 속도를 아주 느리게 해서 뽀얀 느낌 유지
-            this.opacity -= 0.005; 
+            this.opacity -= 0.01; 
         }
 
         draw() {

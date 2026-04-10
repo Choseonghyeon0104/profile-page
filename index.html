@@ -18,6 +18,7 @@
     <meta property="og:description" content="취업 용도의 웹디자이너 포트폴리오 웹사이트입니다. html, css, javascript 언어를 사용하여 직접 구현하였습니다. 팝업, 배너, 상세페이지 등 제작한 작업물을 직접 확인할 수 있습니다.">
     <meta property="og:url" content="/">
     <meta property="og:image" content="./img/sns-card.jpg">
+    <!-- 1200x600사이즈 -->
     <!-- 위 이미지 경로 수정 -->
 
     <meta property="og:type" content="website">
@@ -40,7 +41,7 @@
     <script src="./js/swiper-poster.js"></script>
     <script src="./js/swiper-banner.js"></script>
     <script src="./js/detail.js"></script>
-    <script src="./js/sticky.js"></script>
+    <script src="./js/header.js"></script>
 
     
    
@@ -59,10 +60,34 @@
     <canvas id="smoke-cursor-canvas"></canvas>
     <script src="./js/mouse-cloud.js"></script>
 
+    <!-- 헤더 -->
+    <header id="main-header">
+        <div class="header-container">
+            <div class="logo"><a href="#section-top">PORTFOLIO</a></div>
 
+            <button class="menu-toggle-btn" id="menu-btn" aria-label="Open Menu">
+                <span></span><span></span><span></span>
+            </button>
 
-    <div id="vanta-canvas">
-        <div class="common-frame">
+            <nav id="nav-menu">
+                <ul class="menu-list">
+                    <li><a href="#section-home">Home</a></li>
+                    <li><a href="#section-about">About Me</a></li>
+                    <li><a href="#section-popup">Popup</a></li>
+                    <li><a href="#section-poster">Poster</a></li>
+                    <li><a href="#section-banner">Banner</a></li>
+                    <li><a href="#section-detail">Detail Page</a></li>
+                    <li><a href="#section-project">Project</a></li>
+                    <li><a href="#section-contact">Contact</a></li>
+                    <li><a href="#section-resume" class="resume-tag">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- top -->
+    <div id="vanta-canvas" >
+        <div id="section-top" class="common-frame">
             <div class="hero-txt">
                 <div class="hero-txt1"><span>WEB DESIGNER</span> 조성현</div>
                 <div class="hero-txt2 noto-serif-kr">Design with Trust</div>
@@ -83,7 +108,7 @@
     </div>
 
     <!-- 인트로 -->
-    <div class="intro">
+    <div class="intro" id="section-home">
         <div class="common-frame">
             <figure class="ltr"><img src="./img/intro-img.jpg" alt="인트로 이미지"></figure>
             <div class="intro-txt">
@@ -117,7 +142,7 @@
     </div>
 
     <!-- 어바웃 미 -->
-    <div class="about-wrapper">
+    <div class="about-wrapper" id="section-about">
         <div class="common-frame">
             <h1 class="noto-serif-kr btt">About Me</h1>
             <p>사용자의 편의를 위해 흔들림 없는 구조를 만드는 웹디자이너 조성현입니다.</p>
@@ -234,12 +259,7 @@
             </div>
         </div>
 
-        <nav class="design-nav">
-            <button onclick="scrollToSection('section-popup')">POP UP</button>
-            <button onclick="scrollToSection('section-poster')">POSTER</button>
-            <button onclick="scrollToSection('section-banner')">BANNER</button>
-            <button onclick="scrollToSection('section-detail')">DETAIL</button>
-        </nav>
+   
 
 
         <!-- 팝업 -->
@@ -717,7 +737,18 @@
         </div>
     </div>
 
+    <!-- 프로젝트 -->
+    <div id="section-project"></div>
 
+    <!-- 컨택트 -->
+    <div id="section-contact"></div>
+    
+    
+    
+    
+    
+    
+    
     <!-- 상세페이지 모달 -->
     <div id="detailCustomModal" class="detail-modal-wrap">
         <div class="detail-modal-bg" onclick="closeDetailModal()"></div>
@@ -735,15 +766,8 @@
             </div>
         </div>
     </div>
-
-
-    
-
-
-
-
     <!-- 맨 아래에 위치하는 것들 -->
-    <!-- 모달 -->
+    <!--  팝업 모달 -->
     <div id="imageModal" class="modal-overlay" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal()">&times;</span>
