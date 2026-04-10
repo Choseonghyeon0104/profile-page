@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const vantaElement = document.getElementById('vanta-canvas');
         if (vantaElement) {
             // 애니메이션 대신 성현님이 정하신 하늘색 배경만 깔아줍니다.
-            vantaElement.style.background = "#6b94d9"; 
+            vantaElement.style.background = "#7c9fdbff"; 
         }
         return; // 이 뒤의 VANTA.CLOUDS 코드를 실행하지 않습니다.
     }
