@@ -2,7 +2,7 @@ window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     
     // 효과가 적용될 전체 구간 (숫자를 키우면 더 천천히 진행됨)
-    const scrollMax = 500; 
+    const scrollMax = 350; 
 
     // 1. [구름 효과 그룹] Design with Trust
     const smokeTargets = document.querySelectorAll('.hero-txt2, .hero-txt2-smart');

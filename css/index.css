@@ -3,6 +3,7 @@
 html{
     font-family: 'Pretendard',sans-serif;
     font-size: var(--basic-font-pc);
+    scroll-behavior: smooth;
 }
 body{
     user-select: none;
@@ -497,7 +498,7 @@ html, body {
     word-break: keep-all;
 }
 .design-wrapper{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     padding-top: 7rem;
     padding-bottom: 7rem;
 }
@@ -965,7 +966,7 @@ html, body {
 }
 #section-contact .content h1,
 #section-contact .content p{
-    text-shadow: 0 1px 40px #ffffff;
+    text-shadow: 0 1px 40px #ffecae;
     letter-spacing: 0.02em;
     word-break: keep-all;
 }

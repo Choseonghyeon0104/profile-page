@@ -1,15 +1,21 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // [1] 모바일(768px 이하)이면 아예 실행하지 않고 종료
+    // [1] 모바일(768px 이하) 설정
     if (window.innerWidth <= 768) {
         const vantaElement = document.getElementById('vanta-canvas');
         if (vantaElement) {
-            // 애니메이션 대신 성현님이 정하신 하늘색 배경만 깔아줍니다.
-            vantaElement.style.background = "#7c9fdbff"; 
+            // 단색 배경 대신 이미지를 설정합니다.
+            // 'your-image-url.jpg' 부분에 실제 이미지 파일 경로를 넣으세요.
+            vantaElement.style.backgroundImage = "url('./img/mo-background.jpg')"; 
+            
+            // 이미지가 화면에 예쁘게 꽉 차도록 만드는 설정들입니다.
+            vantaElement.style.backgroundSize = "cover";      // 화면 꽉 채우기
+            vantaElement.style.backgroundPosition = "center"; // 가운데 정렬
+            vantaElement.style.backgroundRepeat = "no-repeat"; // 반복 금지
         }
-        return; // 이 뒤의 VANTA.CLOUDS 코드를 실행하지 않습니다.
+        return; // 모바일에서는 여기서 종료하여 VANTA를 실행하지 않습니다.
     }
 
-    // [2] PC에서만 실행되는 코드
+    // [2] PC에서만 실행되는 VANTA 코드
     VANTA.CLOUDS({
         el: "#vanta-canvas",
         mouseControls: true,

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isNavigating = false; 
     let navTimeout;
 
+    
     // --- [1] ScrollSpy: 섹션 감지 (메뉴 불 켜기) ---
     // 현재 사용자가 보고 있는 섹션을 감지하여 메뉴바에 하이라이트를 줍니다.
     const sectionIds = [
