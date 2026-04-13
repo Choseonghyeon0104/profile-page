@@ -18,7 +18,7 @@
 }
 /* 기본 상태: 아래로 40px 내려가 있고 투명함 */
 .btt {
-    transform: translateY(80px);
+    transform: translateY(40px);
     opacity: 0;
     transition: all 2s ease 0s;
 }
