@@ -236,7 +236,7 @@ html, body {
     font-size: 2.5rem;
 }
 .intro-txt h1{
-    font-size: 8.5rem;
+    font-size: 10vw;
     color: #1D4ED8;
     margin-bottom: var(--space-normal);
 }
@@ -1146,7 +1146,7 @@ html, body {
         font-size: 2rem;
     }
     .intro-txt h1{
-        font-size: 6rem;
+        font-size: 10vw;
     }
     .certi-grid li {
         grid-template-columns: 1fr max-content;
