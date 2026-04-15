@@ -1135,6 +1135,9 @@ html, body {
     color: #fff;
     background-color: #1A2BFE;
 }
+.mobile-spacer{
+    display: none;
+}
 
 
 
@@ -1479,9 +1482,7 @@ html, body {
     html{
         font-size: var(--basic-font-mobile);
     }
-    .common-frame{
-        margin: 0 2rem;        
-    }
+
     .hero-txt-flex{
         flex-direction: column;
         gap: var(--space-small);
@@ -1633,8 +1634,26 @@ html, body {
     .break ul{
         width: auto;
     }
+    .hero-txt-smart{
+        line-height: 1.4;
+    }
+    #section-home br{
+        display: none;
+    }
+    .design-wrapper.none-padding .common-frame h1+p{
+        line-height: 1.4;
+    }
+    .skill-grid li h4 {
+        margin-bottom: 2rem;
+    }
+    .mobile-spacer{
+        display: inherit;
+        height: 1rem;
+    }
+
 
 }
+
 /* 280화면 대응 */
 @media(max-width:400px){
     .intro-txt h1.btt.on {
@@ -1667,7 +1686,7 @@ html, body {
         overflow: auto;
     }
     .modal-text {
-        max-height: 15vh;
+        max-height: 20vh;
     }
     .certi-grid li {
         display: block;
@@ -1715,6 +1734,10 @@ html, body {
     .project-sticky a {
         padding: 0.2rem 1rem;
         font-size: 0.7rem;
+    }
+    .modal-content {
+        width: auto;
+        margin: 0 1rem;
     }
 
 }
