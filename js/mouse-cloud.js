@@ -3,6 +3,9 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let particles = [];
+    
+    let lastMouseX = null;
+    let lastMouseY = null;
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -15,32 +18,26 @@ window.addEventListener('DOMContentLoaded', () => {
         constructor(x, y) {
             this.x = x;
             this.y = y;
-            // 입자 크기를 넉넉하게 잡아서 주변부로 넓게 퍼지게 함
-            this.size = Math.random() * 100 + 40; 
-            
-            // 아주 연하게 잔상이 남도록 시작 투명도를 낮춤
-            this.opacity = 0.5; 
-            
-            // 밖으로 둥글게 퍼져나가는 움직임
-            this.vx = (Math.random() - 0.5) * 2; 
-            this.vy = (Math.random() - 0.5) * 2; 
+            // 초기 크기를 살짝 키워 풍성함 유지
+            this.size = Math.random() * 70 + 40; 
+            this.opacity = 0.35; 
+            // 💨 [수정] 퍼지는 속도를 1.3에서 2.2로 높여 더 넓게 확산됨
+            this.vx = (Math.random() - 0.5) * 2.2; 
+            this.vy = (Math.random() - 0.5) * 2.2; 
         }
 
         update() {
             this.x += this.vx;
             this.y += this.vy;
-            this.size += 2; // 링이 점점 커지면서 흩어짐
-
-            // 사라지는 속도를 아주 느리게 해서 뽀얀 느낌 유지
+            // 📈 [수정] 크기가 커지는 속도를 2.5에서 3.2로 높여 더 빨리 퍼짐
+            this.size += 3.2; 
             this.opacity -= 0.01; 
         }
 
         draw() {
             if (this.opacity <= 0 || this.size <= 0) return;
-            
             ctx.save();
             ctx.globalAlpha = this.opacity;
-            
             ctx.beginPath();
             
             const gradient = ctx.createRadialGradient(
@@ -48,37 +45,42 @@ window.addEventListener('DOMContentLoaded', () => {
                 this.x, this.y, this.size / 2
             );
             
-            // 🎨 [핵심 수정] 도넛 형태로 색상 배치
-            // 0 (중심) : 완전 투명
             gradient.addColorStop(0, 'rgba(0, 162, 255, 0)');   
-            // 0.6 (중간) : 아주 연한 파랑 시작
-            gradient.addColorStop(0.6, 'rgba(144, 172, 255, 0.05)'); 
-            // 0.9 (테두리) : 파란색 잔상이 가장 잘 보이는 지점
-            gradient.addColorStop(0.9, 'rgba(103, 130, 255, 0.3)'); 
-            // 1.0 (끝) : 다시 투명하게 사라짐
+            gradient.addColorStop(0.5, 'rgba(148, 175, 255, 0.08)'); 
+            gradient.addColorStop(0.8, 'rgba(110, 137, 255, 0.25)'); 
             gradient.addColorStop(1, 'rgba(0, 162, 255, 0)');     
 
             ctx.fillStyle = gradient; 
             ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
             ctx.fill();
-            
             ctx.restore();
         }
     }
 
     window.addEventListener('mousemove', (e) => {
-        // 입자를 더 넓은 범위로 뿌려줌 (중심을 비우는 느낌 강조)
-        for(let i=0; i<3; i++) {
-            const randomX = e.clientX + (Math.random() - 0.5) * 20;
-            const randomY = e.clientY + (Math.random() - 0.5) * 20;
-            particles.push(new SmokeRing(randomX, randomY));
+        const currentX = e.clientX;
+        const currentY = e.clientY;
+
+        if (lastMouseX !== null && lastMouseY !== null) {
+            const distance = Math.hypot(currentX - lastMouseX, currentY - lastMouseY);
+            const steps = Math.max(Math.floor(distance / 5), 1);
+
+            for (let i = 0; i < steps; i++) {
+                const x = lastMouseX + (currentX - lastMouseX) * (i / steps);
+                const y = lastMouseY + (currentY - lastMouseY) * (i / steps);
+                
+                const randomX = x + (Math.random() - 0.5) * 10;
+                const randomY = y + (Math.random() - 0.5) * 10;
+                particles.push(new SmokeRing(randomX, randomY));
+            }
         }
+
+        lastMouseX = currentX;
+        lastMouseY = currentY;
     });
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // 겹치는 부분이 은은하게 섞이도록 설정
         ctx.globalCompositeOperation = 'screen';
 
         for (let i = 0; i < particles.length; i++) {

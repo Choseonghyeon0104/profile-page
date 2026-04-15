@@ -1251,10 +1251,7 @@ html, body {
         transform: translate(-50%, 0) !important;
         opacity: 1 !important;
     }
-    #main-header.is-hidden {
-        transform: translate(-50%, 0) !important; /
-        opacity : 1 !important; 
-    }
+
     #nav-menu {
         opacity: 0;
         pointer-events: none;
