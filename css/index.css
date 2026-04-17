@@ -1,6 +1,6 @@
 /* 메인 컬러 #1D4ED8 */
 /* 톤다운 컬러 #FFFFFF */
-@media(min-width:2000px){
+@media (min-width:2000px) {
     html{
         width: 1920px;
         margin: 0 auto;
